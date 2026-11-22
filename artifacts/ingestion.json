@@ -1,0 +1,10 @@
+{
+  "cloud_ingestion_verified": true,
+  "object_key": "panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
+  "object_version": "7e5dfd2f3a14003c7290b88534de41da",
+  "rows": 110488,
+  "sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+  "source": "https://aarya-main-street-20261122.ad277.chatgpt.site/training-data/panel.csv",
+  "storage_provider": "cloudflare-r2",
+  "transport": "https"
+}
