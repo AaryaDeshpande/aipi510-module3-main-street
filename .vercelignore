@@ -1,0 +1,17 @@
+.git/
+.openai/
+.vercel/
+.venv/
+.pytest_cache/
+**/__pycache__/
+data/raw/
+artifacts/tracking/
+artifacts/reproduced/
+container-artifacts/
+reports/
+tests/
+*.ipynb
+*.zip
+.env*
+*credentials*.json
+*service-account*.json

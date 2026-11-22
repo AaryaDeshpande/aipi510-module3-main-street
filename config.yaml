@@ -1,0 +1,19 @@
+dataset:
+  uri: data/panel.csv
+  sha256: ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682
+split:
+  train_target_year: 2021
+  validation_target_year: 2022
+  test_target_year: 2023
+model:
+  alphas:
+  - 1
+  - 10
+  - 100
+  seed: 42
+tracking:
+  experiment: aipi510-main-street-business
+output_dir: artifacts
+economics:
+  uri: data/economics.json
+  sha256: 40dee08c33ac6357d5c7a1270856c0b39b158870e434c7a1a95c62c28e1d1daa

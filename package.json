@@ -1,0 +1,1 @@
+{"name":"main-street-business-explorer-preview","private":true,"scripts":{"dev":".venv/bin/python scripts/dev.py"}}

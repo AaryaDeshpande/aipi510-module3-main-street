@@ -1,0 +1,14 @@
+.git
+.venv
+**/__pycache__
+.pytest_cache
+artifacts/tracking
+artifacts/reproduced
+reports/browser
+.openai
+data/raw
+container-artifacts
+.env*
+*credentials*.json
+*service-account*.json
+*.zip
