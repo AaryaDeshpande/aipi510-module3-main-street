@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-11-22T06:55:05.652419+00:00",
+  "scope": "Actual CUA desktop interactions with the managed local preview only",
+  "preview_url": "http://127.0.0.1:4173/",
+  "tab_id": "5",
+  "title": "Main Street \u2014 Understand the business. Find your way in.",
+  "business_case_controls": {
+    "payroll": true,
+    "distribution": true,
+    "specialized_professional_services": true
+  },
+  "ownership_route_controls": {
+    "build": true,
+    "partner": true,
+    "operate": true,
+    "acquire": true
+  },
+  "irs_financial_dropdown": {
+    "loaded": true,
+    "industry_tested": "541500",
+    "receipts_per_filing_display": "$47,135",
+    "profit_per_filing_display": "$23,133",
+    "margin_display": "49.1%",
+    "tax_year_visible": 2023,
+    "owner_labor_and_schedule_C_caveat_visible": true,
+    "negative_profit_in_accommodation_visible": true
+  },
+  "calculator": {
+    "default_example_remaining": "$7,000",
+    "owner_labor_50_per_hour_60_hours_and_fixed_1000_remaining": "$3,000",
+    "break_even_customers": 12,
+    "direct_cost_600_negative_result": "-$6,000",
+    "nonpositive_unit_contribution_notice_visible": true,
+    "invalid_input_notice_visible": true,
+    "restored_defaults_after_checks": true
+  },
+  "thesis": {
+    "edited": true,
+    "saved_in_browser": true,
+    "restored_after_reload": true,
+    "export_download_completed": true,
+    "cleared_and_empty_after_reload": true
+  },
+  "layout": {
+    "viewport_width": 1363,
+    "document_scroll_width": 1348,
+    "horizontal_overflow": false,
+    "first_screen_screenshot_inspected": true
+  },
+  "application_specific_console_errors_or_warnings": [],
+  "remaining_unverified": [
+    "Phone-width rendering; no documented viewport-emulation control used",
+    "Public deployed version; root will publish",
+    "Suppressed main financial cell rendering; no such row exercised in current selection"
+  ],
+  "initial_policy_boundary": "Auto-review denied observing existing tab4 at the public sign-in origin because this QA task authorized the local preview only. No public-origin observation or login was attempted after rejection. A new tab was opened directly at the explicitly authorized local preview and those checks succeeded.",
+  "final_state": "Local preview marked deliverable; default payroll/build case and clean thesis; no external messages or outreach."
+}

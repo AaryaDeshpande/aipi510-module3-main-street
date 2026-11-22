@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-11-22T10:35:29.034456+00:00",
+  "checks": {
+    "chronological_labels": true,
+    "same_alpha": true,
+    "same_baseline_test": true,
+    "same_dataset_hash": true,
+    "same_model_beats_baseline": true,
+    "same_split_counts": true,
+    "same_split_ids": true,
+    "same_test": true,
+    "same_test_predictions": true,
+    "same_validation": true,
+    "scaler_fit_only_on_training": true,
+    "split_ids_disjoint": true
+  },
+  "passed": true,
+  "scope": "Local/cloud-source training reproduction according to recorded source; container/public checks are separate"
+}

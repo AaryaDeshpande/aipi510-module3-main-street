@@ -1,0 +1,126 @@
+{
+  "exported_utc": "2026-11-22T10:35:31.715538+00:00",
+  "runs": [
+    {
+      "run_id": "43f5001b46f2442f815ff96fe8a7457f",
+      "name": "validation-ridge-alpha-1",
+      "status": "FINISHED",
+      "parameters": {
+        "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "train_target_year": "2021",
+        "validation_target_year": "2022",
+        "test_target_year": "2023",
+        "train_rows": "21258",
+        "validation_rows": "21132",
+        "test_rows": "21224",
+        "target": "next-year establishment relative change",
+        "seed": "42",
+        "alpha": "1",
+        "stage": "validation"
+      },
+      "metrics": {
+        "validation_mae": 3.4101333990532794,
+        "validation_median_ae": 1.3625195749786272,
+        "validation_rmse": 10.315096782488807,
+        "validation_wape": 0.04584655136709776
+      },
+      "artifacts": [
+        "split_ids.json"
+      ]
+    },
+    {
+      "run_id": "51be3601c01e4f928351459c97af225f",
+      "name": "validation-ridge-alpha-10",
+      "status": "FINISHED",
+      "parameters": {
+        "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "train_target_year": "2021",
+        "validation_target_year": "2022",
+        "test_target_year": "2023",
+        "train_rows": "21258",
+        "validation_rows": "21132",
+        "test_rows": "21224",
+        "target": "next-year establishment relative change",
+        "seed": "42",
+        "alpha": "10",
+        "stage": "validation"
+      },
+      "metrics": {
+        "validation_mae": 3.4183304601117914,
+        "validation_median_ae": 1.3685446705061572,
+        "validation_rmse": 10.417385781152175,
+        "validation_wape": 0.04595675438173133
+      },
+      "artifacts": [
+        "split_ids.json"
+      ]
+    },
+    {
+      "run_id": "488622b876aa4f9185729e1bccc82b7d",
+      "name": "validation-ridge-alpha-100",
+      "status": "FINISHED",
+      "parameters": {
+        "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "train_target_year": "2021",
+        "validation_target_year": "2022",
+        "test_target_year": "2023",
+        "train_rows": "21258",
+        "validation_rows": "21132",
+        "test_rows": "21224",
+        "target": "next-year establishment relative change",
+        "seed": "42",
+        "alpha": "100",
+        "stage": "validation"
+      },
+      "metrics": {
+        "validation_mae": 3.4159943982415824,
+        "validation_median_ae": 1.3674081506914453,
+        "validation_rmse": 10.42581880050639,
+        "validation_wape": 0.04592534787412697
+      },
+      "artifacts": [
+        "split_ids.json"
+      ]
+    },
+    {
+      "run_id": "0885f4f0d9824703b82b9844d6d343ac",
+      "name": "selected-ridge-final-test",
+      "status": "FINISHED",
+      "parameters": {
+        "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "train_target_year": "2021",
+        "validation_target_year": "2022",
+        "test_target_year": "2023",
+        "train_rows": "21258",
+        "validation_rows": "21132",
+        "test_rows": "21224",
+        "target": "next-year establishment relative change",
+        "seed": "42",
+        "alpha": "1.0",
+        "stage": "test"
+      },
+      "metrics": {
+        "test_mae": 3.0593603978699737,
+        "test_median_ae": 1.2708668543223833,
+        "test_rmse": 8.640868334840418,
+        "test_wape": 0.040711904980523884,
+        "baseline_test_mae": 2.9015736901620808,
+        "baseline_test_median_ae": 1.0,
+        "baseline_test_rmse": 9.098978809669601,
+        "baseline_test_wape": 0.038612185883726426
+      },
+      "artifacts": [
+        "ingestion.json",
+        "metadata.json",
+        "model.joblib",
+        "resolved_config.json",
+        "split_ids.json",
+        "test_predictions.csv"
+      ]
+    }
+  ]
+}
