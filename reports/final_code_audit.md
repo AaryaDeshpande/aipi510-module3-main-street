@@ -13,11 +13,13 @@ Checked November 22, 2026. See `environment_checks.json` for the current source 
 - Fresh pinned training and serving environments both pass `pip check`. The serving environment has no MLflow installed. The actual saved pipeline loads, Gunicorn serves HTTP, and real JSON prediction plus curl checks pass.
 - Ownership and market frontend workflows were checked in the earlier recorded browser review. A separate Worker coefficient-export review passes 673 prediction parity cases. The review Site is owner-private and uses JavaScript; it is a distinct deployment from the required public Python app.
 
+- Actual hosted Docker build, container training, deterministic reproduction, container-trained serving, HTTP predictions and evidence upload all passed in [CI run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218), source commit `520e0d1b3b52d80173ef2920a663943784aab8a3`. Actual downloaded execution evidence is retained in `ci/` and `ci_observation.json`.
+
 ## Remaining completion gates
 
-1. Run the actual Docker image build, training, and serving checks. The prepared GitHub Actions workflow has to execute after the full source is uploaded. Record its actual URL and results. A CI run establishes execution on its runner; the assignment's local-machine Docker wording still needs the team to execute or verify those commands on its own machine.
+1. Complete the teammate-machine Docker check required by the assignment wording. The hosted Docker checks passed; they establish execution on GitHub's runner. Tanya's proposed independent reproduction PR can record the actual commands and results from her machine.
 2. Deploy the Flask service publicly and verify anonymous frontend, health, metadata, and prediction requests against the final artifact. Vercel is connected; access to the selected workspace awaits the user's consent. No public Flask URL is claimed.
-3. Aarya and Tanya review and explain the work, complete their own meaningful contributions, and retain genuine member-authored PR evidence. An AI-assisted implementation branch or draft PR is not evidence of Tanya's contribution or either member's review.
+3. Aarya reviews [draft implementation PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1), which was opened through his authorized assistant and records AI assistance. Tanya completes and authors her own meaningful contribution and PR. Both explain and review the work. The existing draft PR is not evidence of Tanya's contribution or either member's personal review.
 4. Check the current Canvas assignment, team assignment, rubric, deadline, and text-entry instructions once signed-in access is restored. The previously verified deadline is November 24, 2026, 11:30 am Eastern / 10:30 am Central.
 5. Fill verified deployment and PR URLs into the final submission text. Aarya performs the final Canvas submission. No submission has been made.
 

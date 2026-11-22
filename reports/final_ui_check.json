@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-11-22T10:42:02.522237+00:00",
+  "requested_url": "https://aarya-main-street-20261122.ad277.chatgpt.site/",
+  "observed_url": "https://aarya-main-street-20261122.ad277.chatgpt.site/",
+  "observed_title": "Sign in required",
+  "scope": "Live owner-private Site in CUA cloud browser; stopped at ordinary ChatGPT sign-in gate",
+  "browser": "Chrome CDP",
+  "tab_id": "11",
+  "viewport": {
+    "width": 1363,
+    "height": 936,
+    "document_width": 1363
+  },
+  "observed": [
+    "Log in to access heading",
+    "Continue with ChatGPT link",
+    "Private access gate prevents application UI from loading"
+  ],
+  "executed": {
+    "authenticated_ownership_home": false,
+    "live_csv_export": false,
+    "live_calculator": false,
+    "live_market_prediction": false,
+    "phone_viewport": false
+  },
+  "phone_verification": "Not executed. Advertised Browser capabilities contain no viewport/emulation setting.",
+  "authentication_attempted": false,
+  "tab_mark": "handoff",
+  "limitation": "The live private Site requires sign-in in this browser. Per task instruction, no sign-in interaction was attempted. Earlier local desktop UI checks are separate evidence and do not establish final live or phone behavior."
+}

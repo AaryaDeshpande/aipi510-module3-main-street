@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-22T10:36:45.394278+00:00",
+  "checked_utc": "2026-11-22T10:46:37.544498+00:00",
   "python": "3.12.14",
   "isolated_training_venv_no_system_site_packages": true,
   "serving_only_venv_without_mlflow": true,
@@ -15,8 +15,13 @@
   "cloud_ingestion_executed": true,
   "cloud_provider": "cloudflare-r2",
   "cloud_object_version": "7e5dfd2f3a14003c7290b88534de41da",
-  "docker_executed": false,
+  "docker_executed": true,
   "public_flask_deployment_verified": false,
   "owner_private_review_site": "https://aarya-main-street-20261122.ad277.chatgpt.site/",
-  "scope": "Current local and authenticated cloud-source checks; Docker CI, public Flask deployment, and human contributions are separate gates."
+  "scope": "Passed local training/serving and authenticated cloud-source checks, plus independently verified hosted Docker CI; public Flask and human review/contributions remain open.",
+  "docker_execution_scope": "GitHub-hosted Ubuntu 24.04 runner",
+  "teammate_machine_docker_executed": false,
+  "docker_ci_run_url": "https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218",
+  "docker_ci_commit": "520e0d1b3b52d80173ef2920a663943784aab8a3",
+  "docker_ci_python": "3.12.16"
 }

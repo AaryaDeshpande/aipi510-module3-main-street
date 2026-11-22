@@ -58,9 +58,9 @@ For this forecasting project, chronological train/validation/test separation, co
 ## Completion gaps recorded at audit, with November 22 updates
 
 - Fresh assignment/rubric access, if a final current-page check is needed.
-- Real member-authored PRs and both confirmed partners' review; Aarya and Tanya are now confirmed.
+- Aarya’s authorized AI-assisted [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) now exists; personal review/approval before merge, Tanya’s own meaningful PR, and both partners’ review remain open.
 - Cloud storage and ingestion were open at this audit; the November 22 R2 storage, actual cloud training, 12-check reproduction, and four finished MLflow runs now provide execution evidence. See current `STATUS.md` and `reports/environment_checks.json`.
-- Actual Docker build and training/serving execution.
+- Actual hosted Ubuntu Docker build/train/reproduction/serve/HTTP execution now passes in [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218). Retain a separate teammate-machine run for the assignment’s local execution wording.
 - Public API/frontend deployment, signed-out access, and a real frontend-to-API prediction.
 - Final README links and evidence matching the final source/model.
 - User review and explicit authorization for any shared-repository changes, publication, or submission that remain outside existing authorization.
