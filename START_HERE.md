@@ -12,13 +12,13 @@ The useful outcome is a clearer business mechanism and a specific assumption to 
 
 ## What is already done for the assignment
 
-The Python project has **61 passing tests**, **12 passed cloud-source reproduction checks**, **four actual finished MLflow runs**, actual hash-verified **Cloudflare R2 storage and training-data retrieval**, and real Gunicorn HTTP/curl checks from a fresh inference-only environment. Aarya and Tanya are the confirmed teammates. The earlier local-source 40-test evidence is retained as dated history.
+The Python project has **61 passing tests**, **12 passed cloud-source reproduction checks**, **four actual finished MLflow runs**, actual hash-verified **Cloudflare R2 storage and training-data retrieval**, and real Gunicorn HTTP/curl checks from a fresh inference-only environment. Aarya and Tanya are the confirmed teammates. Actual [hosted Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) also passed build, train, reproduction, serving, and real HTTP tests. Review the full implementation on the [branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) or [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1); default main still contains initialization. The earlier local-source 40-test evidence is retained as dated history.
 
 ## What needs finishing
 
-- Finish the GitHub implementation PR, Tanya's meaningful personally authored PR, and both partners' review.
-- Build and run Docker training and serving on a teammate's computer. Save the real request results; identify any hosted Actions run separately as CI evidence.
+- Aarya personally reviews draft PR #1 before any approved merge. Tanya completes her own meaningful, personally authored PR; both partners review the work.
+- Build and run Docker training and serving on a teammate's computer. Save the real request results. Hosted Actions Docker CI is already verified; a teammate-machine run still needs recording.
 - Complete the pending Vercel team/workspace grant, deploy the actual Python service, and verify its public frontend/API URLs on desktop and phone.
 - Recheck Canvas instructions, fill the verified links into README/SUBMISSION.md, and have Aarya submit personally after final review. No automatic submission is planned.
 
-The private phone review provides a working review surface. Public Flask deployment remains open. See [STATUS.md](STATUS.md), [DEPLOYMENT.md](DEPLOYMENT.md), [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md), and [SUBMISSION.md](SUBMISSION.md) for evidence and exact next steps.
+The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence. Public Flask deployment remains open. See [STATUS.md](STATUS.md), [DEPLOYMENT.md](DEPLOYMENT.md), [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md), and [SUBMISSION.md](SUBMISSION.md) for evidence and exact next steps.

@@ -38,7 +38,7 @@ The GCS `upload-data` helper is an alternative implementation retained in the so
 
 ## 2. Build and execute Docker locally
 
-The assignment explicitly asks for actual local Docker execution. A prepared Dockerfile is one part of that requirement. A GitHub Actions run executes containers on a hosted Ubuntu runner; record it as CI evidence and retain a teammate-machine run for the local requirement.
+The assignment explicitly asks for actual local Docker execution. A prepared Dockerfile is one part of that requirement. The actual [successful Actions run](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) executed containers on a hosted Ubuntu runner. Retain that CI evidence and add a teammate-machine run for the local requirement.
 
 From the reviewed project directory on a machine with Docker running:
 
@@ -66,7 +66,9 @@ curl --fail --silent --show-error \
 
 Retain build/train/serve logs, machine/runtime details, exit results, HTTP results, and model/data hashes. Local-snapshot container training tests container execution; the cloud-ingested run in step 1 provides its own evidence. Keep temporary container outputs outside the tracked final artifacts. Stop the serving container after checking it, and rebuild after a final code/model change.
 
-The prepared [Actions workflow](.github/workflows/verify.yml) builds, trains, compares splits/metrics/predictions, serves the new model, performs real HTTP tests, and uploads evidence. Its successful run URL and actual artifact must exist before it is marked passed. It does not deploy or require cloud tokens.
+**Hosted Docker CI passed:** [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `520e0d1b3b52d80173ef2920a663943784aab8a3`. `reports/ci_observation.json` records the successful job, and `reports/ci/` retains downloaded execution evidence. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
+
+The downloaded artifact `14751147208` has verified SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; its provenance and retained reports are in `reports/ci/`. The workflow uses the local frozen snapshot, does not deploy, and needs no cloud tokens.
 
 ## 3. Deploy the actual Flask service
 
@@ -95,8 +97,10 @@ Compare the returned model and dataset hashes with the final artifacts. Check si
 
 The source years and model limitation must remain visible: observations end in 2023, displayed 2024 estimates are unverified historical estimates, and model test MAE is higher than the no-change baseline. Only record public checks after executing them against the deployed origin.
 
+The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence.
+
 ## 5. Finish team review and submission
 
-Aarya and Tanya are the confirmed partners. Publish the reviewed source through the approved repository workflow, preserve each person's actual authored work, and record meaningful PR URLs in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Both people review the pipeline and limitations.
+Aarya and Tanya are the confirmed partners. The implementation upload is complete on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation), and [AI-assisted draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) awaits Aarya’s personal review and approval before merge. Tanya’s own meaningful PR remains pending. Preserve each person’s actual authored work and record it in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Both people review the pipeline and limitations.
 
 Complete [REQUIREMENTS.md](REQUIREMENTS.md), fill the real frontend/API links into README, and prepare the Canvas text in [SUBMISSION.md](SUBMISSION.md). Aarya reviews the final repository and public service, then completes the Canvas submission personally. No automated submission is planned. Record the observed Canvas result and timestamp afterward.

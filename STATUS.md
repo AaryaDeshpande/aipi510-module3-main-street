@@ -17,18 +17,21 @@ Updated November 22, 2026 UTC. Personal completion target: Sunday November 22, C
 | Reproduction | All 12 cloud-source reproduction and leakage checks pass; reports/reproducibility.json |
 | Environments and tests | 61 tests passed; training and separate inference-only environments pass pip check; reports/pytest.txt and reports/environment_checks.json |
 | Real serving-only HTTP | Fresh inference environment without MLflow loads the saved model; Gunicorn, HTTP requests, JSON predictions, curl, and errors checked; reports/serving_only_http.log, http_smoke.json and curl_prediction.json |
-| Desktop interaction | Map/filter/history/unknown/shortlist checks and revised ownership case/route/scenario/thesis controls recorded in reports/browser_checks.json and reports/ownership_browser_checks.json |
-| Repository and review | Actual repo: https://github.com/AaryaDeshpande/aipi510-module3-main-street; initial source upload is committed on aarya/module3-implementation; final docs/artifacts/workflow upload pending; owner-private phone review remains available |
+| Earlier local desktop interaction | Map/filter/history/unknown/shortlist and revised ownership controls recorded in reports/browser_checks.json and reports/ownership_browser_checks.json; latest private live Site check stopped at sign-in, and phone behavior remains untested |
+| Repository and review | 85 implementation files uploaded to [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation); [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) awaits Aarya’s personal review/approval before merge; default main remains initialization |
+| Hosted Docker CI | [Run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) SUCCESS: real build, train, reproduction, container serving, HTTP/curl and evidence artifact; source commit `520e0d1b3b52d80173ef2920a663943784aab8a3`; reports/ci_observation.json and retained reports/ci/ |
 
 The earlier environment report is retained as `reports/environment_checks_earlier.json`; it describes the earlier 40-test, local-source run. Current claims use the newer report. No further training is needed merely to repeat completed checks; rerun relevant checks after a substantive source/model change.
 
 ## Finish these remaining steps
 
-1. **Finish publishing and review the code.** Complete the implementation upload and genuine authored PR. Tanya reviews the project, makes her own meaningful change, and opens her own PR. Both partners review and understand the full pipeline. Record actual contribution and PR URLs.
-2. **Run Docker on a teammate's computer.** Build, train, serve, and send real JSON requests using DEPLOYMENT.md. Save the outputs. The prepared Actions workflow can add hosted Ubuntu Docker evidence after it runs; identify that as CI rather than a teammate-machine run.
+1. **Review the existing draft PR and finish team contributions.** Aarya personally reviews the authorized AI-assisted draft PR #1 before any approved merge. Tanya independently executes meaningful work, records it in her own PR, and both partners review and understand the pipeline.
+2. **Run Docker on a teammate's computer.** Build, train, serve, and send real JSON requests using DEPLOYMENT.md. Save the outputs. Hosted Ubuntu Docker CI already passed; retain that result and add the teammate-machine evidence.
 3. **Finish public Flask deployment.** Vercel is connected, but the workspace's 403 permission response needs its pending team grant. Once granted, deploy the reviewed Python service and record its real frontend and `/predict` URLs.
 4. **Check the real public service.** Verify signed-out instructor access, model/data hashes, the browser's real API request, errors, and phone/desktop behavior. Fill the URLs and final commit into README and SUBMISSION.md.
 5. **Aarya completes Canvas submission.** Recheck the current assignment/rubric/deadline when signed in, review the final links/evidence, submit personally, and record the observed confirmation and timestamp. No automated Canvas submission is planned.
+
+The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence.
 
 ## Practical meaning and limits
 

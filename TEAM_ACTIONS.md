@@ -1,6 +1,6 @@
 # Team handoff and final review
 
-**Confirmed Module 3 teammates: Aarya Deshpande and Tanya**, as confirmed by Aarya. Tanya's GitHub handle and both members' meaningful authored PRs remain pending. See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for the authoritative contribution record and [SUBMISSION.md](SUBMISSION.md) for the final review sheet. The syllabus's general group-size wording and assignment's partner wording remain documented in the source audit; no additional teammate has been assumed.
+**Confirmed Module 3 teammates: Aarya Deshpande and Tanya**, as confirmed by Aarya. [Authorized AI-assisted draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) exists; Aarya’s personal review and approval before merge are pending. Tanya’s GitHub handle and own meaningful PR remain pending. See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for the authoritative contribution record and [SUBMISSION.md](SUBMISSION.md) for the final review sheet. The syllabus's general group-size wording and assignment's partner wording remain documented in the source audit; no additional teammate has been assumed.
 
 ## Suggested work packages
 
@@ -14,9 +14,9 @@ Aarya and Tanya can agree on these work packages. Each member reviews and author
 
 ## Completion order for Sunday November 22
 
-1. Use the confirmed Aarya/Tanya roster and [project repository](https://github.com/AaryaDeshpande/aipi510-module3-main-street); finish the implementation branch and agree who will run Docker locally. Cloud storage and cloud-ingested training are already verified.
+1. Use the confirmed Aarya/Tanya roster and [project repository](https://github.com/AaryaDeshpande/aipi510-module3-main-street); review the completed implementation branch/draft PR and agree who will run Docker locally. Cloud storage and cloud-ingested training are already verified.
 2. Review the prepared app and explain the data/model. Resolve incorrect assumptions before deployment.
-3. Preserve completed R2 cloud-ingestion/training evidence, 12 passed reproduction checks, 61 passing tests, four finished MLflow runs, and inference-only HTTP results. Run Docker training/serving on a teammate's machine; label any hosted CI result separately.
+3. Preserve completed R2 cloud-ingestion/training evidence, 12 passed reproduction checks, 61 passing tests, four finished MLflow runs, and inference-only HTTP results. Run Docker training/serving on a teammate's machine; hosted [Docker CI already passed](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) and is recorded separately.
 4. Publish the approved service and test it through the actual public page on desktop and phone.
 5. Complete each real member's meaningful PR, final README links, and evidence checklist.
 6. Aarya reviews the final repository/demo/Canvas entry and submits personally once the required evidence is in place. No automated Canvas submission is planned.
@@ -29,7 +29,7 @@ Fill with observed work only:
 
 | Member | Work personally reviewed/performed | Authored PR URL |
 |---|---|---|
-| Aarya Deshpande | Pending personal review/execution and team agreement | Pending |
+| Aarya Deshpande | Authorized AI-assisted implementation uploaded; personal review/understanding and merge approval pending | [Draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) |
 | Tanya | Pending personal review/execution and team agreement; GitHub handle still to record | Pending |
 
 The current implementation was prepared with AI assistance. The README describes this and the reused learning/engineering sources. Every actual author should be able to explain their contribution and the complete pipeline.
@@ -54,9 +54,10 @@ Training covers complete national histories in ten industries; the interface dis
 - [x] Cleaned data stored in R2; actual cloud training retrieves it and records matching hash, version, and 110,488 rows.
 - [x] Current checks: 61 tests, 12 cloud-source reproduction checks, four finished MLflow runs, and real inference-only Gunicorn HTTP/curl checks.
 - [ ] Final code/model passes the executed tests and repeated-run checks; reports describe their exact scope.
-- [ ] Docker builds and runs both training and serving; real container HTTP checks pass.
+- [x] Hosted Docker build/train/reproduction/serve/HTTP checks pass in [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218); evidence retained in reports/ci/.
+- [ ] Teammate-machine Docker build/train/serve/HTTP results recorded for the local requirement.
 - [ ] Public frontend and API are reachable to the instructor; frontend makes a real successful prediction request.
-- [ ] Desktop/phone map, filters, histories, unknown cells, shortlist, CSV, errors, and source dates checked.
+- [ ] Final live desktop/phone checks completed. Earlier local desktop QA is retained; the latest private Site attempt stopped at sign-in (`reports/final_ui_check.json`).
 - [ ] Model/baseline outcome and historical 2024 status are presented accurately.
 - [ ] README has real GitHub, frontend, and API links plus setup/train/test/deploy instructions and sources.
 - [ ] Final requirements reviewed against the published assignment, with unresolved items disclosed.
