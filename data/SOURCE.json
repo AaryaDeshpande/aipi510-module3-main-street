@@ -1,0 +1,207 @@
+{
+  "prepared_utc": "2026-11-22T05:51:42.736576+00:00",
+  "dataset": "U.S. Census County Business Patterns selected county/2017-NAICS industries",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "industries": {
+    "2382": "Building equipment contractors",
+    "2383": "Building finishing contractors",
+    "5412": "Accounting, tax preparation, bookkeeping, and payroll services",
+    "5413": "Architectural, engineering, and related services",
+    "5415": "Computer systems design and related services",
+    "5617": "Services to buildings and dwellings",
+    "6212": "Offices of dentists",
+    "6213": "Offices of other health practitioners",
+    "8111": "Automotive repair and maintenance",
+    "8121": "Personal care services"
+  },
+  "rows": 110488,
+  "sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+  "bytes": 5799225,
+  "columns": [
+    "county_fips",
+    "industry",
+    "year",
+    "establishments",
+    "employment",
+    "annual_payroll",
+    "employment_flag",
+    "payroll_flag",
+    "county_name",
+    "state"
+  ],
+  "sources": [
+    {
+      "year": 2019,
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2019/cbp19co.zip",
+      "archive_member": "cbp19co.txt",
+      "bytes": 11530594,
+      "sha256": "a75f31b5d0b76a0de3957d8289be0359cc4008015bbf492b40c664ccf6580966",
+      "counts": {
+        "raw_rows": 1085472,
+        "outside_selected_industries": 1063197,
+        "unpublished_employment": 0,
+        "unpublished_payroll": 0,
+        "retained_rows": 22048,
+        "statewide_or_unknown_county": 227,
+        "wisconsin_rows": 623
+      },
+      "flags": {
+        "employment_G": 10396,
+        "payroll_G": 13006,
+        "payroll_H": 6524,
+        "employment_H": 5686,
+        "employment_J": 5966,
+        "payroll_J": 2518
+      }
+    },
+    {
+      "year": 2020,
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2020/cbp20co.zip",
+      "archive_member": "cbp20co.txt",
+      "bytes": 11472306,
+      "sha256": "3df8fb3409bc5ae5691cd145a45b26f58a29652c4dd4e62f8e709c23fab60e8d",
+      "counts": {
+        "raw_rows": 1082434,
+        "outside_selected_industries": 1060200,
+        "unpublished_employment": 0,
+        "unpublished_payroll": 0,
+        "retained_rows": 21980,
+        "statewide_or_unknown_county": 254,
+        "wisconsin_rows": 624
+      },
+      "flags": {
+        "employment_H": 5708,
+        "payroll_G": 12983,
+        "employment_G": 10391,
+        "payroll_H": 6518,
+        "employment_J": 5881,
+        "payroll_J": 2479
+      }
+    },
+    {
+      "year": 2021,
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2021/cbp21co.zip",
+      "archive_member": "cbp21co.txt",
+      "bytes": 11545498,
+      "sha256": "d1d7c917aab46aed5ae7116068e0574cbcec97a722b136166fefa3ab9a9dc258",
+      "counts": {
+        "raw_rows": 1090164,
+        "outside_selected_industries": 1067824,
+        "unpublished_employment": 0,
+        "unpublished_payroll": 0,
+        "retained_rows": 22080,
+        "statewide_or_unknown_county": 260,
+        "wisconsin_rows": 623
+      },
+      "flags": {
+        "employment_H": 5609,
+        "payroll_G": 13077,
+        "payroll_H": 6557,
+        "employment_G": 10522,
+        "payroll_J": 2446,
+        "employment_J": 5949
+      }
+    },
+    {
+      "year": 2022,
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2022/cbp22co.zip",
+      "archive_member": "cbp22co.txt",
+      "bytes": 13723814,
+      "sha256": "dcea1d9a7060cdb763c841d863163856ba8d5a50dce9056992bdeacd08ff99b4",
+      "counts": {
+        "raw_rows": 1100804,
+        "outside_selected_industries": 1078377,
+        "unpublished_employment": 0,
+        "unpublished_payroll": 0,
+        "retained_rows": 22177,
+        "statewide_or_unknown_county": 250,
+        "wisconsin_rows": 639
+      },
+      "flags": {
+        "employment_G": 10381,
+        "payroll_G": 12933,
+        "employment_J": 5999,
+        "payroll_H": 6623,
+        "employment_H": 5797,
+        "payroll_J": 2621
+      }
+    },
+    {
+      "year": 2023,
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23co.zip",
+      "archive_member": "cbp23co.txt",
+      "bytes": 12919520,
+      "sha256": "e9539e96ceb91608ad44ab1cfc651d7c1ff9b88bddfe7a8ff64134ccde6e9603",
+      "counts": {
+        "raw_rows": 1100961,
+        "outside_selected_industries": 1078516,
+        "unpublished_employment": 0,
+        "unpublished_payroll": 0,
+        "retained_rows": 22203,
+        "statewide_or_unknown_county": 242,
+        "wisconsin_rows": 637
+      },
+      "flags": {
+        "employment_G": 10518,
+        "payroll_G": 12895,
+        "employment_H": 5756,
+        "payroll_H": 6702,
+        "employment_J": 5929,
+        "payroll_J": 2606
+      }
+    }
+  ],
+  "gazetteer": {
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip",
+    "sha256": "919df59ba90759cce85468c0337e898e4b39c08eaffce86ddd88fa41f1f7f0c8"
+  },
+  "geometry": {
+    "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1/query?where=STATE%3D%2755%27&outFields=GEOID%2CNAME%2CSTATE%2CCOUNTY&outSR=4326&geometryPrecision=4&maxAllowableOffset=0.005&f=geojson",
+    "raw_sha256": "ecaadae71d8c03181a6f3a0e4c50f5cf605058fb8e1e7ce725021420fc3f8ba0",
+    "sha256": "2fb69fcea5d55f4e655931698dd60c21bdb17a3986b8ef4ad028466b45056b4b",
+    "counties": 72,
+    "purpose": "Simplified display geometry only; no model input",
+    "note": "TIGERweb current boundaries captured at preparation; Wisconsin has same county identities as business panel"
+  },
+  "missing_county_names": {
+    "02261": 21,
+    "09001": 30,
+    "09003": 30,
+    "09005": 30,
+    "09007": 30,
+    "09009": 30,
+    "09011": 30,
+    "09013": 30,
+    "09015": 30
+  },
+  "cleaning": [
+    "Keep exactly the ten 4-digit industry aggregate rows; never sum overlapping child industries",
+    "Preserve 5-character county FIPS and industry codes as strings",
+    "Exclude county 000/999 statewide and unknown-county rows",
+    "Reject duplicates, malformed identifiers, and invalid published establishment counts",
+    "Retain missing county-industry-year cells as unknown; never fill zero. Cells below three establishments are unpublished",
+    "Convert annual payroll from source thousands of dollars to dollars; retain employment/payroll noise flags",
+    "Treat withheld or unknown magnitude values as null; do not infer them by subtracting broader totals"
+  ],
+  "limitations": [
+    "Counts represent employer establishment locations, not distinct firms, owners, revenue, profit, or unmet demand",
+    "Self-employed and other nonemployer businesses are outside CBP coverage",
+    "2019\u20132023 use the same 2017 NAICS classification, but geography and disclosure changes can affect comparison",
+    "Older county IDs absent from the 2023 Gazetteer keep an explicit FIPS label; model joins require matching year-specific IDs",
+    "COVID-period dynamics and disclosure-related missingness limit forecast generalization",
+    "Payroll and employment values are noisy published estimates; payroll is not business revenue"
+  ],
+  "references": [
+    "https://www.census.gov/programs-surveys/cbp/technical-documentation/methodology.html",
+    "https://www.census.gov/programs-surveys/cbp/about/glossary.html",
+    "https://www.census.gov/newsroom/press-releases/2025/2023-county-business-patterns.html",
+    "https://www.census.gov/data/datasets/2017/econ/cbp/2017-cbp.html",
+    "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2023.html"
+  ]
+}
