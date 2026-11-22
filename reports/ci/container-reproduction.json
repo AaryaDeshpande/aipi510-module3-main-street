@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "same_dataset_sha256": true,
+    "local_snapshot_transport": true,
+    "same_selected_alpha": true,
+    "same_split_counts": true,
+    "same_split_ids": true,
+    "same_baseline_conclusion": true,
+    "same_validation": true,
+    "same_baseline_validation": true,
+    "same_test": true,
+    "same_baseline_test": true,
+    "same_prediction_schema": true,
+    "same_prediction_rows": true,
+    "same_predictions": true
+  },
+  "scope": "Container retraining of the frozen local snapshot"
+}

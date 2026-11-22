@@ -1,0 +1,15 @@
+.............................................................            [100%]
+=============================== warnings summary ===============================
+../../../../../opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_project.py::test_temporal_splits_and_scaling_use_training_observations_only
+  /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/mlflow/store/tracking/sqlalchemy_store.py:356: SADeprecationWarning: The ``noload`` loader strategy is deprecated and will be removed in a future release.  This option produces incorrect results by returning ``None`` for related items. (deprecated since: 2.1)
+    sqlalchemy.orm.configure_mappers()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+61 passed, 2 warnings in 5.88s

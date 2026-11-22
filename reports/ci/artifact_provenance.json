@@ -1,0 +1,19 @@
+{
+  "artifact_id": 14751147208,
+  "run_id": 45013764218,
+  "source_commit": "520e0d1b3b52d80173ef2920a663943784aab8a3",
+  "sha256": "4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a",
+  "run_url": "https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218",
+  "retained_files": [
+    "container-reproduction.json",
+    "curl-prediction.json",
+    "docker-train.log",
+    "health.json",
+    "docker-serve.log",
+    "http-smoke.json",
+    "pip-check.log",
+    "run.json",
+    "pytest.log"
+  ],
+  "scope": "Actual hosted Ubuntu Docker build, training, deterministic reproduction, serving and HTTP checks; student-machine execution is separate."
+}
