@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "pytest": {
+      "passed": 61,
+      "warnings": 2,
+      "seconds": 10.74,
+      "environment": "Fresh Python 3.12.14 environment; requirements-dev.txt"
+    },
+    "javascript_syntax": "node --check passed",
+    "public_static_js_mirror": "byte-identical",
+    "training_artifacts": "retained unchanged; original code hash describes original training run"
+  },
+  "limits": [
+    "New academic presentation is local; no claim of updated public deployment",
+    "GitHub owner passkey authentication returned Authentication failed; Tanya invitation not verified",
+    "Duke login returned incorrect NetID/password/MFA option; current assignment/rubric not refreshed",
+    "Syllabus team-of-three/new-partner rule needs current assignment exception or existing approval"
+  ]
+}

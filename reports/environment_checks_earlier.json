@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-11-22T06:55:52.687239+00:00",
+  "python": "3.12.14",
+  "isolated_venv_no_system_site_packages": true,
+  "pip_check": "No broken requirements found.",
+  "source_matches_trained_code_hash": true,
+  "code_sha256": "85e26ac089633542738cff40f7c4b094af62527d2f4e1a0d5e8310642b1230c0",
+  "tests": 40,
+  "reproduction_checks": 12,
+  "http_smoke_passed": true,
+  "financial_workbook_rows_independently_checked": 32,
+  "cloud_ingestion_executed": false,
+  "docker_executed": false,
+  "public_flask_deployment_verified": false,
+  "owner_private_review_site": "https://aarya-main-street-20261122.ad277.chatgpt.site/"
+}

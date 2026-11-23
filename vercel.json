@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "maxDuration": 60,
+      "excludeFiles": "{data/raw/**,data/economics_source.xlsx,artifacts/tracking/**,artifacts/reproduced/**,reports/**,tests/**,container-artifacts/**,.venv/**,**/__pycache__/**,.pytest_cache/**,scripts/**,*.ipynb,*.zip}"
+    }
+  }
+}

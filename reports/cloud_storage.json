@@ -1,0 +1,21 @@
+{
+  "provider": "cloudflare-r2",
+  "upload_status": 200,
+  "download_status": 200,
+  "manifest": {
+    "provider": "cloudflare-r2",
+    "key": "panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
+    "sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+    "size": 5799225,
+    "version": "7e5dfd2f3a14003c7290b88534de41da",
+    "etag": "\"0635d2e4d0fb795d052ecb7db7e02f0d\""
+  },
+  "sha256_verified": true,
+  "bytes": 5799225,
+  "response_headers": {
+    "x-object-key": "panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
+    "x-object-sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+    "x-object-version": "7e5dfd2f3a14003c7290b88534de41da",
+    "x-storage-provider": "cloudflare-r2"
+  }
+}

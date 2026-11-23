@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Wisconsin's local business landscape with dated Census evidence, county comparisons, and a reproducible forecasting experiment.">
+  <title>Main Street · Wisconsin Business Explorer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to explorer</a>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Main Street<small>BUSINESS EXPLORER</small></span></a>
+    <nav aria-label="Main navigation"><a href="#explorer">Explore</a><a href="#shortlist-section">Shortlist <span id="saved-count">0</span></a><a href="#method">Method & sources</a></nav>
+    <span class="region-tag">Wisconsin, USA</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">AIPI 510 · DATA / ML ENGINEERING</p><h1>Explore county business data.<br>Evaluate a forecasting model.</h1><p class="hero-copy">A reproducible supervised-learning project using U.S. Census County Business Patterns. Explore Wisconsin observations, inspect the held-out evaluation, and request a prediction from the deployed model.</p></div>
+      <div class="data-note"><span class="note-icon" aria-hidden="true">◷</span><div><strong id="snapshot-label">Loading Census snapshot</strong><p>Historical evidence for market research.<br>Every measure keeps its source and date.</p></div></div>
+    </section>
+
+    <section class="panel" aria-labelledby="pipeline-heading"><p class="section-kicker">RESEARCH QUESTION AND PIPELINE</p><h2 id="pipeline-heading">Can prior establishment counts predict the following year?</h2><p>Official county–industry data → cloud ingestion → chronological train/validation/test splits → Ridge regression → MLflow experiment records → saved model → Flask JSON API.</p><p id="pipeline-summary">Loading the saved experiment’s split sizes and evaluation…</p><p class="small muted">Establishments are business locations with paid employees. The map presents historical observations. Predictions are unverified historical estimates; they do not measure customer demand, profits, or personal income.</p><p><a href="/metadata">Model metadata and evaluation</a> · <a href="https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation">Source code, reproduction instructions, and evidence</a></p></section>
+
+    <div id="app-status" class="status" role="status" aria-live="polite">Loading the business data and county map…</div>
+    <button id="retry" class="button secondary" hidden type="button">Try loading again</button>
+
+    <section id="explorer" class="explorer" aria-label="Wisconsin business explorer" hidden>
+      <aside class="filters panel">
+        <div class="section-kicker">YOUR RESEARCH LENS</div>
+        <label for="industry-select">Business category</label><select id="industry-select"></select>
+        <p id="industry-description" class="muted small"></p>
+        <label for="county-select">County to investigate</label><select id="county-select"></select>
+        <div class="filter-divider"></div>
+        <label for="map-metric">Color the map by</label><select id="map-metric"><option value="establishments">Business locations</option><option value="growth_pct">Year-over-year growth</option><option value="annual_payroll">Annual payroll</option></select>
+        <p class="muted small">Select a county on the map or use the county menu. Gray indicates an unavailable value.</p>
+        <div class="lens-summary"><span class="section-kicker">WHAT THIS MEASURES</span><p>Business locations with paid employees. A company can operate several locations.</p><p class="muted small">Payroll and employment describe market scale. Profits, owner wealth, and willingness to buy need separate evidence.</p></div>
+      </aside>
+
+      <section class="map-panel panel" aria-labelledby="map-heading">
+        <div class="panel-heading"><div><p class="section-kicker" id="map-industry-kicker">WISCONSIN</p><h2 id="map-heading">The local business landscape</h2></div><span class="year-badge" id="map-year">Census snapshot</span></div>
+        <div class="map-stage" id="map-stage"><svg id="county-map" viewBox="0 0 590 530" role="group" aria-label="Interactive map of Wisconsin counties"></svg><div class="map-tooltip" id="map-tooltip" hidden></div></div>
+        <div id="map-legend" class="legend" aria-label="Map color legend"></div>
+        <p class="map-caption" id="map-caption"></p>
+      </section>
+
+      <section class="county-panel panel" aria-labelledby="county-heading">
+        <p class="section-kicker">SELECTED COUNTY</p><h2 id="county-heading">Dane County</h2><p id="county-category" class="muted"></p>
+        <div id="county-metrics" class="county-metrics"></div>
+        <div class="trend-heading"><h3>Reported history</h3><span id="trend-range" class="small muted"></span></div><div id="history-chart" class="history-chart"></div>
+        <p id="county-data-note" class="small muted"></p>
+        <button id="save-selection" type="button" class="button primary">Save to research shortlist</button>
+        <p class="small muted save-note">Saved in this browser. Add a few markets, then compare them below.</p>
+      </section>
+    </section>
+
+    <section class="comparison-grid" id="comparisons" hidden>
+      <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+        <div class="panel-heading"><div><p class="section-kicker">COMPARE THE SAME CATEGORY</p><h2 id="comparison-heading">Across Wisconsin</h2></div><label class="compact-label" for="comparison-sort">Sort by<select id="comparison-sort"><option value="establishments">Locations</option><option value="growth_pct">Growth</option><option value="annual_payroll">Payroll</option></select></label></div>
+        <p class="muted small" id="comparison-description"></p>
+        <div class="table-wrap"><table><thead><tr><th scope="col">County</th><th scope="col" class="number">Locations</th><th scope="col" class="number">Change</th><th scope="col" class="number">Payroll</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+        <button id="show-counties" class="text-button" type="button">Show all counties</button>
+      </section>
+      <section class="panel comparison-panel" aria-labelledby="local-heading"><div class="panel-heading"><div><p class="section-kicker">COMPARE WITHIN THE COUNTY</p><h2 id="local-heading">Other local categories</h2></div></div><p class="muted small">Select a category to explore its county map and history.</p><div id="local-industries" class="local-industries"></div></section>
+    </section>
+
+    <section class="action-grid" id="research-next" hidden>
+      <section class="panel interview-panel"><p class="section-kicker">TURN THE DATA INTO A CONVERSATION</p><h2>Find a problem worth solving.</h2><p id="interview-category" class="muted"></p><div class="hypothesis"><strong>Interview hypothesis · unverified</strong><p id="workflow-hypothesis"></p></div><ol id="interview-questions"><li>Which recurring task causes the most delays or lost business?</li><li>Walk me through the last time it happened. What did it cost?</li><li>What have you tried, and what would make a paid pilot worthwhile?</li></ol><p class="small muted">A growing category can also mean more competition. Validate the workflow, buyer, and budget with real owners.</p></section>
+      <section class="panel forecast-panel"><div class="panel-heading"><div><p class="section-kicker">SUPERVISED MODEL EXPERIMENT</p><h2>Test a historical forecast.</h2></div><span class="experiment-tag">EXPLORATORY</span></div><p class="muted" id="forecast-description">Estimate the following year's business-location count using this historical snapshot.</p><div id="backtest-metrics" class="backtest-metrics"></div><p id="backtest-interpretation" class="small muted"></p><button id="predict-button" class="button secondary" type="button">Run estimate for this selection</button><div id="prediction-result" class="prediction-result" aria-live="polite"></div><p class="small muted">The estimate comes from the saved model through the JSON prediction API. The data dates remain part of the result.</p></section>
+    </section>
+
+    <section id="shortlist-section" class="panel shortlist-panel">
+      <div class="panel-heading"><div><p class="section-kicker">YOUR NEXT CONVERSATIONS</p><h2>Research shortlist</h2></div><button id="export-shortlist" type="button" class="button secondary" disabled>Export CSV</button></div><p class="muted">Save county–category pairs you want to investigate. This is a research list; customer demand and partner fit still need validation.</p><div id="shortlist-content"><p class="empty-state">Your shortlist is empty. Start with a category and county above.</p></div>
+    </section>
+
+    <section id="method" class="method-section">
+      <div><p class="eyebrow">BUILT TO BE CHECKED</p><h2>Evidence, assumptions,<br>and a reproducible model.</h2><p class="muted">Explore measured history, inspect the prediction task, and follow the original sources.</p></div>
+      <div class="method-details">
+        <details open><summary>What the data can support</summary><div id="limitations"><p>Loading dataset limitations…</p></div></details>
+        <details><summary>How the model is checked</summary><p id="model-method">Loading the training and evaluation record…</p><p>Mean absolute error (MAE) measures the average prediction error in business locations. The no-change baseline predicts the same count as the input year. Model selection uses validation data; held-out test results provide a separate final check.</p><p>Cleaning, cloud ingestion, configuration, training, MLflow tracking, saved artifacts, Docker, and the prediction service are documented with the project source.</p><p><a href="/metadata">Open the model metadata</a></p></details>
+        <details><summary>Original sources & definitions</summary><ul id="source-links"></ul><p>Counts describe establishments with paid employees. Employment and payroll can carry disclosure/noise flags. Missing or withheld values are shown as unavailable, and flagged observations retain their source flags.</p><p>This tool uses aggregate business statistics. It contains no named-owner directory or individual net-worth estimates.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><span>Main Street Business Explorer</span><span>Wisconsin · AIPI 510 Module 3</span></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "checked_utc": "2026-11-22T05:59:13.311333+00:00",
+  "scope": "Managed local preview through CUA cloud browser; public deployment and phone viewport remain unverified",
+  "preview_url": "http://127.0.0.1:4173/",
+  "title": "Main Street \u00b7 Wisconsin Business Explorer",
+  "tab_id": "4",
+  "desktop": {
+    "viewport_width": 1363,
+    "document_scroll_width": 1348,
+    "horizontal_overflow": false,
+    "county_map_regions": 72,
+    "all_county_regions_keyboard_focusable": true,
+    "layout_visually_inspected": true
+  },
+  "observed_checks": {
+    "default_dane_building_equipment_data_and_history": true,
+    "business_locations_growth_and_payroll_map_metrics": true,
+    "metric_specific_legends_and_source_dates": true,
+    "industry_and_county_menus_update_data": true,
+    "long_accounting_category_label_remains_accessible": true,
+    "forest_accounting_unknown_values_display_unavailable": true,
+    "unknown_history_does_not_display_zero": true,
+    "prediction_disabled_when_required_counts_unavailable": true,
+    "map_click_selects_dane": true,
+    "enter_key_on_map_selects_milwaukee": true,
+    "dane_accounting_prediction_response_visible": {
+      "model_estimate_displayed": 166.4,
+      "baseline_displayed": 165,
+      "target_year": 2024,
+      "historical_notice_visible": true
+    },
+    "baseline_lower_test_mae_disclosed": {
+      "national_model": 3.06,
+      "national_baseline": 2.9,
+      "wisconsin_model": 2.22,
+      "wisconsin_baseline": 2.0,
+      "wisconsin_cases": 617
+    },
+    "shortlist_save": true,
+    "shortlist_remove": true,
+    "csv_export_download_observed": true,
+    "default_selection_restored_and_tab_marked_deliverable": true
+  },
+  "console": {
+    "application_url_filtered_errors_or_warnings": [],
+    "browser_extension_metadata_errors_observed_separately": true
+  },
+  "unexecuted": [
+    "Phone viewport rendering and interactions",
+    "Public HTTPS deployment checks"
+  ],
+  "verification_limit": "The documented CUA surface supplied no viewport-resize/emulation API; a browser developer-tools shortcut timed out. No alternate browser-control or network path was used."
+}

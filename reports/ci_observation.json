@@ -1,0 +1,145 @@
+{
+  "checked_utc": "2026-11-22T10:45:56.220Z",
+  "repository": "AaryaDeshpande/aipi510-module3-main-street",
+  "run_id": 45013764218,
+  "run_url": "https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218",
+  "source_commit": "520e0d1b3b52d80173ef2920a663943784aab8a3",
+  "source_branch": "aarya/module3-implementation",
+  "source_verified_from": [
+    "Native job-log checkout SHA",
+    "Native execution artifact workflow_run.head_sha"
+  ],
+  "status": "completed",
+  "observed_jobs_conclusion": "success",
+  "jobs": [
+    {
+      "id": 137181548302,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 45013764218,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Record this run and install the pinned environment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run data, evaluation, API, and financial snapshot tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build the actual Docker image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Train inside the container",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Compare container training with the recorded experiment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Serve the container-trained model and check real HTTP",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Collect container logs and stop the service",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Upload execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/setup-python@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ]
+    }
+  ],
+  "execution_scope": "Actual Docker image build, training, reproduction comparison, and container HTTP serving on the GitHub-hosted Ubuntu runner. This does not establish execution on the student's own local machine.",
+  "dataset_scope": "Frozen local panel inside Docker; actual R2 cloud ingestion is documented separately.",
+  "evidence_artifact": {
+    "id": 14751147208,
+    "name": "pipeline-docker-evidence-45013764218-1",
+    "size_in_bytes": 574997,
+    "created_at": "2026-11-22T10:44:29Z",
+    "expires_at": "2026-12-06T10:44:28Z",
+    "expired": false,
+    "digest": "sha256:4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a",
+    "api_url": "https://api.github.com/repos/AaryaDeshpande/aipi510-module3-main-street/actions/artifacts/14751147208"
+  },
+  "observed_log_excerpts": [
+    "2026-11-22T10:42:59.3214176Z Successfully set up CPython (3.12.16)",
+    "2026-11-22T10:43:40.4466230Z 61 passed, 2 warnings in 5.88s",
+    "2026-11-22T10:44:25.5660085Z   \"passed\": true,",
+    "2026-11-22T10:44:25.5660759Z     \"same_dataset_sha256\": true,",
+    "2026-11-22T10:44:25.5661363Z     \"same_selected_alpha\": true,",
+    "2026-11-22T10:44:25.5661616Z     \"same_split_counts\": true,",
+    "2026-11-22T10:44:25.5661878Z     \"same_split_ids\": true,",
+    "2026-11-22T10:44:25.5662150Z     \"same_baseline_conclusion\": true,",
+    "2026-11-22T10:44:25.5662412Z     \"same_validation\": true,",
+    "2026-11-22T10:44:25.5662683Z     \"same_baseline_validation\": true,",
+    "2026-11-22T10:44:25.5662966Z     \"same_test\": true,",
+    "2026-11-22T10:44:25.5663182Z     \"same_baseline_test\": true,",
+    "2026-11-22T10:44:25.5663452Z     \"same_prediction_schema\": true,",
+    "2026-11-22T10:44:25.5663726Z     \"same_prediction_rows\": true,",
+    "2026-11-22T10:44:25.5663974Z     \"same_predictions\": true",
+    "2026-11-22T10:44:25.5664468Z   \"scope\": \"Container retraining of the frozen local snapshot\"",
+    "2026-11-22T10:44:27.9503702Z   \"passed\": true,"
+  ],
+  "limitations": [
+    "Public Flask deployment is a separate verification gate.",
+    "This observation does not establish Canvas submission or all actual team-member pull requests."
+  ]
+}
