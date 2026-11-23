@@ -17,9 +17,11 @@
   </header>
   <main>
     <section class="hero">
-      <div><p class="eyebrow">LOCAL MARKETS · PUBLIC EVIDENCE</p><h1>See the businesses<br>behind the map.</h1><p class="hero-copy">Compare local industries, follow their reported history, and choose where to start conversations with business owners.</p></div>
+      <div><p class="eyebrow">AIPI 510 · DATA / ML ENGINEERING</p><h1>Explore county business data.<br>Evaluate a forecasting model.</h1><p class="hero-copy">A reproducible supervised-learning project using U.S. Census County Business Patterns. Explore Wisconsin observations, inspect the held-out evaluation, and request a prediction from the deployed model.</p></div>
       <div class="data-note"><span class="note-icon" aria-hidden="true">◷</span><div><strong id="snapshot-label">Loading Census snapshot</strong><p>Historical evidence for market research.<br>Every measure keeps its source and date.</p></div></div>
     </section>
+
+    <section class="panel" aria-labelledby="pipeline-heading"><p class="section-kicker">RESEARCH QUESTION AND PIPELINE</p><h2 id="pipeline-heading">Can prior establishment counts predict the following year?</h2><p>Official county–industry data → cloud ingestion → chronological train/validation/test splits → Ridge regression → MLflow experiment records → saved model → Flask JSON API.</p><p id="pipeline-summary">Loading the saved experiment’s split sizes and evaluation…</p><p class="small muted">Establishments are business locations with paid employees. The map presents historical observations. Predictions are unverified historical estimates; they do not measure customer demand, profits, or personal income.</p><p><a href="/metadata">Model metadata and evaluation</a> · <a href="https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation">Source code, reproduction instructions, and evidence</a></p></section>
 
     <div id="app-status" class="status" role="status" aria-live="polite">Loading the business data and county map…</div>
     <button id="retry" class="button secondary" hidden type="button">Try loading again</button>
