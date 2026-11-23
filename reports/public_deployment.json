@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-11-22T13:05:29.105448+00:00",
+  "origin": "https://aipi510-module3-main-street.vercel.app",
+  "frontend_url": "https://aipi510-module3-main-street.vercel.app/",
+  "market_url": "https://aipi510-module3-main-street.vercel.app/market",
+  "prediction_api_url": "https://aipi510-module3-main-street.vercel.app/predict",
+  "project_id": "prj_kcmZb3P1FFyLjdIJrF2mlOndguuf",
+  "deployment_id": "dpl_6V8j2jMzxtdypBbYfSi7dT3HNgp7",
+  "deployed_source_commit": "ba6386433cb2b26fab5228992dd13f0cfa5a9c5b",
+  "deployment_state": "READY",
+  "framework": "flask",
+  "build_log_observations": [
+    "GitHub review branch cloned at ba63864",
+    "Python 3.12 from .python-version",
+    "requirements.txt installed",
+    "Build Completed in /vercel/output [14s]",
+    "Deployment completed"
+  ],
+  "signed_out_stable_domain_http_passed": true,
+  "unique_build_url_requires_vercel_authentication": true,
+  "access_control_change_applied": false,
+  "health_observed": {
+    "status": "ready",
+    "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+    "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682"
+  },
+  "model_and_dataset_match_saved_artifacts": true,
+  "smoke_report": "reports/public_http_smoke.json",
+  "limits": [
+    "Phone review is unexecuted",
+    "Frontend unavailable-API state is unexecuted",
+    "Human review/contributions and local teammate Docker evidence remain pending",
+    "No Canvas submission made"
+  ]
+}

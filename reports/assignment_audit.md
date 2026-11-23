@@ -66,3 +66,15 @@ For this forecasting project, chronological train/validation/test separation, co
 - User review and explicit authorization for any shared-repository changes, publication, or submission that remain outside existing authorization.
 
 Passing local checks alone should be reported as local progress. Submission completion must be verified independently after the user authorizes the submission action.
+
+## Continuation update, November 22
+
+The public Flask/API deployment and signed-out desktop checks now pass at <https://aipi510-module3-main-street.vercel.app/>. Exact deployed source and execution evidence are in `reports/public_deployment.json`, `reports/public_http_smoke.json`, and `reports/public_browser_checks.json`. Phone/device and unavailable-API checks remain open. A fresh navigation to the assignment reached Duke's public Canvas login landing page, so current assignment text/rubric/deadline were not refreshed. The earlier audit and its source limits remain historical evidence.
+
+## Latest signed-in review
+
+## Latest verified access update
+
+Canvas sign-in succeeded and assignment 363937 was read directly. The deadline is November 24, 2026 at **10:30 am Central / 11:30 am Eastern** (16:30 UTC). The current assignment explicitly excludes predictive accuracy from assessment, requires each member to author a PR, and requires a local Docker build/run. GitHub invitation **345631416** was sent to **Tanya-duke** and is awaiting her response. Older login-blocker notes below describe earlier attempts. See `reports/canvas_access_review.json` for current findings.
+
+The current assignment text was read directly. The global Groups list showed MENG 570 groups and no AIPI Project Groups entry; no group enrollment was changed. Cloud provider substitutions (R2 storage and Vercel Flask API) remain a platform-choice interpretation to confirm against the named lists. Full details: `reports/canvas_access_review.json` and `INSTRUCTOR_REVIEW.md`.
