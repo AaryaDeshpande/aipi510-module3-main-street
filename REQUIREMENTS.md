@@ -1,5 +1,9 @@
 # Module Project 3 acceptance checklist
 
+## Latest verified access update
+
+Canvas sign-in succeeded and assignment 363937 was read directly. The deadline is November 24, 2026 at **10:30 am Central / 11:30 am Eastern** (16:30 UTC). The current assignment explicitly excludes predictive accuracy from assessment, requires each member to author a PR, and requires a local Docker build/run. GitHub invitation **345631416** was sent to **Tanya-duke** and is awaiting her response. Older login-blocker notes below describe earlier attempts. See `reports/canvas_access_review.json` for current findings.
+
 This checklist maps the previously verified Canvas requirements to concrete evidence for the business explorer. It does not certify completion or assign invented rubric points. See [the source audit](reports/assignment_audit.md) for source freshness and unresolved items.
 
 Assignment: <https://canvas.duke.edu/courses/83524/assignments/363937>
@@ -25,14 +29,15 @@ Assignment: <https://canvas.duke.edu/courses/83524/assignments/363937>
 - [x] **Hosted container CI.** [Actual run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) passed Docker build, container training, reproduction, serving, real HTTP checks, and artifact upload on Ubuntu. Evidence in `reports/ci_observation.json` and `reports/ci/`.
 - [ ] **Local-machine container requirement.** Build/run training and serving on a teammate's machine and retain real JSON results. Hosted CI is identified separately from this assignment wording.
 - [x] **Flask/FastAPI JSON API.** Provide `/predict` with documented field names, types, units, outputs, and input-error behavior. Load the intended saved model/preprocessing artifact.
-- [ ] **Public cloud API.** Vercel is connected; a workspace 403 requires the pending team permission grant. After authorized deployment, verify the real HTTPS URL and model/version against final artifacts. Local serving-only checks already pass; public deployment is still open.
-- [ ] **Public frontend calling the API.** Use a real HTTP JSON request to the deployed endpoint. Verify the request succeeds from the public page on desktop and phone; show useful errors. A shared host for frontend and API is acceptable when the browser genuinely calls `/predict`.
+- [x] **Public cloud API.** <https://aipi510-module3-main-street.vercel.app/predict> accepts real JSON POSTs without sign-in. Public health/model/data identifiers match final artifacts; actual smoke evidence is in `reports/public_http_smoke.json` and `reports/public_deployment.json`.
+- [x] **Public frontend calling the API.** The public `/market` page initiated a real prediction and displayed the returned model estimate (281.2) and no-change baseline (276), with historical dates and limitations. Desktop evidence: `reports/public_browser_checks.json`.
+- [ ] **Remaining device/error-state QA.** Phone layout and a simulated API failure in the frontend remain unexecuted; the public API's invalid-input checks pass.
 
 ## Documentation, authorship, and submission
 
 - [x] **README overview and sources.** Explain the actual business question, dataset, source/reference years, preparation, target, features, model, evaluation, baseline, cloud services, and limitations.
 - [x] **README reproducibility.** Give exact setup, training, test, container, and deployment instructions that match the final code.
-- [ ] **README links.** Include the actual live frontend URL and deployed API URL. Confirm the GitHub repository is accessible to the instructor. Remove placeholders before submission.
+- [x] **README links.** Actual stable frontend/API URLs are included and their signed-out access passed. GitHub reports the repository as public; implementation remains on the linked review branch until approved merge.
 - [x] **Honest use and limitations.** Clearly distinguish observed business statistics, historical model estimates, screening hypotheses, and any manually supplied information. Do not label estimated establishment counts as wealth, revenue, profit, or customer demand.
 - [x] **Code-source attribution.** Cite copied/reused code or templates and explain material changes. The syllabus states uncited copying can receive zero and expects originality.
 - [x] **AI acknowledgment.** Recommended by the syllabus, with no points deducted for omitting it. A concise README disclosure can identify AI assistance. An interface banner is not required by the syllabus.

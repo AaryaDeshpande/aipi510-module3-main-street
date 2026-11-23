@@ -1,8 +1,12 @@
 # Team workflow and genuine contribution record
 
+## Latest verified access update
+
+Canvas sign-in succeeded and assignment 363937 was read directly. The deadline is November 24, 2026 at **10:30 am Central / 11:30 am Eastern** (16:30 UTC). The current assignment explicitly excludes predictive accuracy from assessment, requires each member to author a PR, and requires a local Docker build/run. GitHub invitation **345631416** was sent to **Tanya-duke** and is awaiting her response. Older login-blocker notes below describe earlier attempts. See `reports/canvas_access_review.json` for current findings.
+
 Aarya confirms the Module 3 teammates are **Aarya Deshpande and Tanya**. Tanya's GitHub handle and exact display name for submission still need recording. No additional teammate has been assumed. The syllabus's general group-size wording and the assignment's partner wording are recorded in the source audit; the working roster here follows Aarya's confirmation.
 
-Repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>. The 85-file implementation is uploaded on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation); use that branch or [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) while default main remains initialization. The draft is authorized AI-assisted work awaiting Aarya’s personal review and approval before merge.
+Repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>. The implementation is uploaded on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation); use that branch or [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) while default main remains initialization. The draft is authorized AI-assisted work awaiting Aarya’s personal review and approval before merge.
 
 ## Contributions to record
 
@@ -30,7 +34,7 @@ git switch -c tanya/independent-review origin/aarya/module3-implementation
 
 For an existing checkout, start with `git fetch origin` and the `git switch` command. Tanya then independently follows DEPLOYMENT.md, records her actual machine/date/commands/results and any fixes, commits her work with her own identity, and pushes her branch if she has write access. Open her PR with **base `aarya/module3-implementation`** and **head `tanya/independent-review`**. Review that PR before merging it; its changes will then be included in the still-open implementation PR.
 
-If Tanya has no repository write access, she can use her own GitHub fork: fetch the implementation branch from this upstream repository, branch from it, push to her fork, and open a PR back to upstream with base `aarya/module3-implementation` and her fork/branch as the head. Use her actual account; no handle is assumed here. No invitation or message has been sent to her.
+If Tanya has no repository write access, she can use her own GitHub fork: fetch the implementation branch from this upstream repository, branch from it, push to her fork, and open a PR back to upstream with base `aarya/module3-implementation` and her fork/branch as the head. Use her actual account; no handle is assumed here. A GitHub collaborator invitation has now been sent to `Tanya-duke`; acceptance remains pending. No separate message was sent.
 
 If Aarya first approves and merges PR #1, Tanya can instead fetch the updated `main`, branch from `origin/main`, and target `main` in her PR. Check which state exists before starting. Neither creating a branch nor copying these commands establishes that Tanya has run Docker or authored a contribution.
 
@@ -40,7 +44,7 @@ If Aarya first approves and merges PR #1, Tanya can instead fetch the updated `m
 2. Agree on bounded changes that each person will actually perform. Tanya follows the implementation-branch instructions above; each branch owner uses their own identity. Aarya reviews the existing draft implementation PR before approving any merge.
 3. Complete each change, run the relevant checks, and open a meaningful PR. Include the concrete change, source references where applicable, and actual validation output. Record the URL above only after the PR exists.
 4. Review the other person's PR and resolve issues. Preserve actual authorship and review history. Merge only within the team's authorized repository workflow.
-5. Preserve the completed R2 cloud-ingestion evidence, 61 passing tests, 12 passed cloud-source reproduction checks, four finished MLflow runs, and serving-only HTTP checks. [Hosted Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) has now passed build/train/reproduction/serve/HTTP checks. Preserve its evidence in `reports/ci/`, then record a teammate-machine Docker run for the local execution wording and complete the final public frontend/API checks.
+5. Preserve the completed R2 cloud-ingestion evidence, 61 passing tests, 12 passed cloud-source reproduction checks, four finished MLflow runs, and serving-only HTTP checks. [Hosted Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) has now passed build/train/reproduction/serve/HTTP checks. Preserve its evidence in `reports/ci/`, then record a teammate-machine Docker run for the local execution wording. Public HTTP and desktop frontend/API checks now pass; phone/device and unavailable-API review remain open.
 6. Fill the real deployed URLs into README and SUBMISSION.md, check instructor access, and complete the final requirement audit. Aarya reviews the final result and submits through Canvas personally. No automated submission is planned.
 
 The personal target is Sunday, November 22, 2026. The earlier verified Canvas deadline is November 24, 11:30 am Eastern / 10:30 am Central; fresh Canvas instructions still need checking when sign-in access permits.
@@ -55,10 +59,14 @@ The personal target is Sunday, November 22, 2026. The earlier verified Canvas de
 
 **Hosted Docker CI passed:** [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `520e0d1b3b52d80173ef2920a663943784aab8a3`. `reports/ci_observation.json` records the successful job, and `reports/ci/` retains downloaded execution evidence. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
 
-The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence.
+Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-module3-main-street.vercel.app>. Live desktop checks cover ownership controls, calculator with owner labor, thesis save/restore/export/clear, county filters, unknown cells, a real browser prediction, and shortlist CSV download. See `reports/public_http_smoke.json`, `reports/public_deployment.json`, and `reports/public_browser_checks.json`. Phone/device review and a simulated frontend request failure remain unexecuted. The earlier private-Site gate in `reports/final_ui_check.json` is historical evidence.
 
 ## Attribution
 
 The [Module 1 local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen) is prior national market-screening research. The [Week 12 Iris pipeline](https://github.com/AaryaDeshpande/aipi510-week12-ml-pipeline) is an earlier learning source for engineering patterns. The current business regression experiment and its results must be evaluated independently. README documents AI assistance and the reused patterns. Cite any further code or templates actually reused.
 
 Do not enter invented contribution summaries, PRs, test results, deployment URLs, or submission confirmations. Record executed checks with their run URL or report path and the exact commit they tested.
+
+## Instructor-facing continuation review
+
+See [INSTRUCTOR_REVIEW.md](INSTRUCTOR_REVIEW.md) for the ML implementation/evidence map, presentation changes, and remaining source-access/team eligibility checks. Tanya’s confirmed account is `Tanya-duke`; [TANYA_START_HERE.md](TANYA_START_HERE.md) prepares her independent Docker/model-review PR. Invitation was sent to `Tanya-duke` and awaits acceptance. The prepared research-first homepage is local until published.

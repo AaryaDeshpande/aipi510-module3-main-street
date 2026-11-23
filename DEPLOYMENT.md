@@ -74,33 +74,33 @@ The downloaded artifact `14751147208` has verified SHA-256 `4a86198b544bb540f7e7
 
 The current selected route is **Vercel's Flask/Python hosting**. The app exports a Flask instance from `app.py`, uses the inference-only `requirements.txt`, and includes deployment configuration in `vercel.json`. The serving-only environment has loaded the model and passed real Gunicorn HTTP/curl checks with no MLflow requirement; see [reports/serving_only_http.log](reports/serving_only_http.log) and [reports/deployment-runtime-check.json](reports/deployment-runtime-check.json). This establishes local serving readiness.
 
-Vercel is connected, but the current workspace request returns **403 pending the team's permission grant**. The user-facing grant link is short-lived; it is not a deployment URL and is not stored here. After the existing permission grant is completed, deploy the reviewed branch through the connected account and record the actual returned public URL. The [official Vercel Flask guide](https://vercel.com/docs/frameworks/backend/flask) describes the supported Flask entrypoint and dependency configuration.
+**Deployment completed.** Vercel built the actual Flask project from review branch commit `ba6386433cb2b26fab5228992dd13f0cfa5a9c5b` and reports deployment `dpl_6V8j2jMzxtdypBbYfSi7dT3HNgp7` as READY. Build logs confirm GitHub cloning, Python 3.12, pinned dependency installation, completed build, and deployed outputs. Stable public origin: <https://aipi510-module3-main-street.vercel.app/>. The unique build URL requires Vercel authentication; signed-out access to the stable production origin works. No login-protection change was applied. See `reports/public_deployment.json`.
 
 The runtime package includes the saved model, cleaned panel, financial snapshot, and geometry. It excludes training logs, raw downloads, the IRS source workbook, and private credentials. Static files are mirrored under `public/static` for this host; the recorded local check verifies those copies match the application sources. Inference requires no training-data token. Training should run before packaging the service.
 
-The same public Flask service supplies the frontend and JSON API. Its root is the frontend URL; its `/predict` route is the API URL. Add both actual URLs to README and SUBMISSION.md after verification.
+The same Flask service supplies the frontend at <https://aipi510-module3-main-street.vercel.app/> and JSON POST API at <https://aipi510-module3-main-street.vercel.app/predict>. Both are recorded in README and SUBMISSION.md with executed public checks.
 
 ## 4. Verify public access and frontend requests
 
-Use the actual returned HTTPS origin in place of the placeholder below:
+The following smoke command was executed successfully against the stable production domain:
 
 ```bash
-python scripts/http_smoke.py --base-url ACTUAL_HTTPS_SERVICE_URL --output reports/public_http_smoke.json
-curl --fail --silent --show-error ACTUAL_HTTPS_SERVICE_URL/health
+python scripts/http_smoke.py --base-url https://aipi510-module3-main-street.vercel.app --output reports/public_http_smoke.json
+curl --fail --silent --show-error https://aipi510-module3-main-street.vercel.app/health
 curl --fail --silent --show-error \
   -H 'Content-Type: application/json' \
   -d '{"industry":"2382","establishments":100,"previous_establishments":95}' \
-  ACTUAL_HTTPS_SERVICE_URL/predict
+  https://aipi510-module3-main-street.vercel.app/predict
 ```
 
 Compare the returned model and dataset hashes with the final artifacts. Check signed-out instructor access, then use the actual public webpage on desktop and phone. Observe a successful prediction request initiated by `/market` and useful handling of a failed request. Check ownership case/route controls, IRS year and unknown values, calculator assumptions and owner-labor value, thesis save/export/clear, map filters, histories, and shortlist CSV.
 
 The source years and model limitation must remain visible: observations end in 2023, displayed 2024 estimates are unverified historical estimates, and model test MAE is higher than the no-change baseline. Only record public checks after executing them against the deployed origin.
 
-The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence.
+Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-module3-main-street.vercel.app>. Live desktop checks cover ownership controls, calculator with owner labor, thesis save/restore/export/clear, county filters, unknown cells, a real browser prediction, and shortlist CSV download. See `reports/public_http_smoke.json`, `reports/public_deployment.json`, and `reports/public_browser_checks.json`. Phone/device review and a simulated frontend request failure remain unexecuted. The earlier private-Site gate in `reports/final_ui_check.json` is historical evidence.
 
 ## 5. Finish team review and submission
 
 Aarya and Tanya are the confirmed partners. The implementation upload is complete on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation), and [AI-assisted draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) awaits Aarya’s personal review and approval before merge. Tanya’s own meaningful PR remains pending. Preserve each person’s actual authored work and record it in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Both people review the pipeline and limitations.
 
-Complete [REQUIREMENTS.md](REQUIREMENTS.md), fill the real frontend/API links into README, and prepare the Canvas text in [SUBMISSION.md](SUBMISSION.md). Aarya reviews the final repository and public service, then completes the Canvas submission personally. No automated submission is planned. Record the observed Canvas result and timestamp afterward.
+The actual frontend/API links are filled into README and the prepared Canvas text in [SUBMISSION.md](SUBMISSION.md). Complete the remaining checks in [REQUIREMENTS.md](REQUIREMENTS.md). Aarya reviews the final repository and public service, then completes the Canvas submission personally. No automated submission is planned. Record the observed Canvas result and timestamp afterward.
