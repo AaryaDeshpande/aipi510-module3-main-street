@@ -95,7 +95,10 @@ def create_app(artifact_dir: Path | None = None):
         return jsonify(error="Request exceeds 16 KB"), 413
 
     @app.get("/")
-    def index(): return render_template("home.html")
+    def index(): return render_template("index.html")
+
+    @app.get("/ownership")
+    def ownership(): return render_template("home.html")
 
     @app.get("/market")
     def market(): return render_template("index.html")
