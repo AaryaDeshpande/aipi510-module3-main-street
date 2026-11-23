@@ -1,12 +1,8 @@
 # Main Street Business Explorer
 
-## Latest verified access update
-
-Canvas sign-in succeeded and assignment 363937 was read directly. The deadline is November 24, 2026 at **10:30 am Central / 11:30 am Eastern** (16:30 UTC). The current assignment explicitly excludes predictive accuracy from assessment, requires each member to author a PR, and requires a local Docker build/run. GitHub invitation **345631416** was sent to **Tanya-duke** and is awaiting her response. Older login-blocker notes below describe earlier attempts. See `reports/canvas_access_review.json` for current findings.
-
 A reproducible supervised-learning project for AIPI 510 Module Project 3: predict next-year county–industry establishment counts from earlier observations, evaluate against persistence, and serve the saved model through a public Flask API and Wisconsin data explorer. A supplementary worksheet explores business economics.
 
-**Prepared presentation update, awaiting publication:** `/` opens the ML research view, `/market` provides the same explorer, and `/ownership` preserves the supplementary worksheet. Until the prepared commits are pushed and deployed, the live homepage retains the earlier presentation.
+`/` opens the deployed ML research view; `/market` provides the same explorer and `/ownership` preserves the supplementary worksheet.
 
 Live Flask application: <https://aipi510-module3-main-street.vercel.app/> — publicly accessible without signing in. Open <https://aipi510-module3-main-street.vercel.app/market> for the county explorer and real JSON prediction client. The earlier owner-private ChatGPT Site is retained only as a review surface and cloud-data retrieval service.
 
@@ -14,16 +10,16 @@ The supplementary ownership worksheet uses dated company examples to explain cus
 
 The economics context is a separately audited IRS 2023 Wisconsin Schedule C snapshot with 32 selected industry groups. Its source workbook is included at `data/economics_source.xlsx`; regenerate with `python scripts/prepare_economics.py` after installing development dependencies. `config.yaml` pins the JSON snapshot hash. Dollar units, suppressed values, owner-labor treatment, filing-address geography, and aggregate-mean limits are explicit. The financial snapshot is not an input to the CBP prediction model. A state-industry margin model was explored separately and is not claimed as a validated opportunity predictor.
 
-**Current review status, November 22:** actual R2 storage, cloud-ingested training, 61 tests, reproduction, and hosted Docker CI are verified. The implementation is uploaded on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation); [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) contains the authorized AI-assisted work and awaits Aarya’s personal review and approval before merge. Default `main` still contains initialization content, so use the branch or draft PR to review this version. Public Flask deployment, signed-out HTTP checks, matching model/data hashes, and a live desktop browser prediction now pass. Tanya’s own meaningful PR, both partners’ review, teammate-machine Docker execution, phone review, and a current signed-in Canvas check remain open. See [STATUS.md](STATUS.md) and [REQUIREMENTS.md](REQUIREMENTS.md).
+**Status, November 23:** the public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks and [current Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) are verified. The [implementation branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) and [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) await the team's real review/contributions; `main` still contains initialization. Tanya-duke has been invited. See [TEAM_ACTIONS.md](TEAM_ACTIONS.md) for local Docker, member PRs, Canvas roster, provider-equivalence and submission steps. R2/Vercel are operational; acceptance as alternatives to the named storage/API providers remains unverified.
 
 ## Submission links
 
 - GitHub repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>; current implementation: [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) and [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) (public repository; personal review pending)
-- Successful Docker CI: [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218)
+- Successful Docker CI: [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476)
 - Live frontend: <https://aipi510-module3-main-street.vercel.app/>
 - Deployed prediction API: <https://aipi510-module3-main-street.vercel.app/predict> — JSON POST; see the request example below
 - [Canvas assignment](https://canvas.duke.edu/courses/83524/assignments/363937)
-- Previously verified due time: **November 24, 2026, 11:30 am Eastern / 10:30 am Central**. Personal target: Sunday November 22. Fresh Canvas access is currently sign-in blocked; the source audit records that limit.
+- Verified Canvas deadline: **November 24, 2026, 11:30 am Eastern / 10:30 am Central**. Accuracy is explicitly excluded from assessment. Current source findings: `reports/canvas_access_review.json`.
 
 The same Flask service serves the frontend and JSON API. Its public root URL provides the frontend, and the browser calls `/predict` on that host.
 
@@ -144,11 +140,11 @@ docker run --rm --user "$(id -u):$(id -g)" \
 
 The commands are Linux/macOS examples. Windows users should adapt volume/user syntax to their Docker setup. The hosted Actions run below passed actual container execution. The assignment's local build/run wording still calls for a teammate-machine run and recorded results.
 
-**Hosted Docker CI passed:** [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `520e0d1b3b52d80173ef2920a663943784aab8a3`. `reports/ci_observation.json` records the successful job, and `reports/ci/` retains downloaded execution evidence. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
+**Hosted Docker CI passed:** [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6`. `reports/final_release_review.json` records the current successful job. Earlier downloaded CI artifacts are retained in `reports/ci/` with their original provenance. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
 
 The [workflow](.github/workflows/verify.yml) uses Python 3.12 and pinned development dependencies, runs the full tests and Docker checks, and uploads real evidence. The downloaded artifact `14751147208` was verified against SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; provenance is in `reports/ci/artifact_provenance.json`. It uses the frozen local panel and no cloud credentials. The actual R2-ingested run is documented separately.
 
-The training-data service is Cloudflare R2 behind the authenticated review endpoint. The Flask frontend/API is deployed on Vercel at <https://aipi510-module3-main-street.vercel.app/>, from source commit `ba6386433cb2b26fab5228992dd13f0cfa5a9c5b`. Signed-out requests to the stable production domain pass; the unique build URL still requires Vercel authentication. No access-control setting was changed during verification. The packaged inference service needs no training-data token. See [DEPLOYMENT.md](DEPLOYMENT.md).
+The training-data service is Cloudflare R2 behind the authenticated review endpoint. The Flask frontend/API is deployed on Vercel at <https://aipi510-module3-main-street.vercel.app/>, from source commit `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6`. Signed-out requests to the stable production domain pass; the unique build URL still requires Vercel authentication. No access-control setting was changed during verification. The packaged inference service needs no training-data token. See [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Files and authorship
 
@@ -160,8 +156,4 @@ Earlier learning source: [Aarya's Week 12 Iris pipeline](https://github.com/Aary
 
 Earlier research source: [Aarya's Module 1 national local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen). That project provides prior market-screening research and context. The Module 3 regression target, chronological splits, model training, experiment tracking, and serving pipeline are distinct work; Module 1 results are not evidence for this model.
 
-**Confirmed teammates: Aarya Deshpande and Tanya**, as confirmed by Aarya. The authorized AI-assisted implementation is in [Aarya’s draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1); Aarya’s personal review and merge approval remain pending. Tanya’s GitHub handle, own meaningful PR, and both partners’ review remain pending. The prepared implementation is AI assisted; no completed human contribution is attributed without evidence. See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for the contribution record and [SUBMISSION.md](SUBMISSION.md) for the final review checklist. Both partners should review the work and explain their contributions. Aarya completes the final Canvas submission after review; no automatic submission is planned.
-
-## Instructor-facing continuation review
-
-See [INSTRUCTOR_REVIEW.md](INSTRUCTOR_REVIEW.md) for the ML implementation/evidence map, presentation changes, and remaining source-access/team eligibility checks. Tanya’s confirmed account is `Tanya-duke`; [TANYA_START_HERE.md](TANYA_START_HERE.md) prepares her independent Docker/model-review PR. Invitation was sent to `Tanya-duke` and awaits acceptance. The prepared research-first homepage is local until published.
+**Teammates: Aarya Deshpande and Tanya Sharma (`Tanya-duke`).** Personal review and genuine contributions are recorded in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md); Tanya's independent Docker/PR instructions are in [TANYA_START_HERE.md](TANYA_START_HERE.md). The collaborator invitation is awaiting acceptance. Aarya completes Canvas submission after team review.

@@ -1,24 +1,25 @@
-# Main Street: understand the business and find an entry route
+# Understand the project in two minutes
 
-Review on your phone: <https://aarya-main-street-20261122.ad277.chatgpt.site/>. Sign in with your owning ChatGPT account if prompted. The ownership workspace is the homepage; the supporting county observations and supervised model are at `/market`.
+Open the [live website](https://aipi510-module3-main-street.vercel.app/). Choose a business category and Wisconsin county, inspect its history, then click **Run estimate for this selection**.
 
-1. Compare the sourced payroll/HR, specialty-distribution, and professional-services cases. Identify who pays, what they buy repeatedly, costs, operating advantages, and barriers.
-2. Compare four entry routes: build a specialized service/software business, partner with an operator, own and operate, or acquire an existing business. Read the resources and evidence each route needs.
-3. Inspect the IRS Wisconsin financial context. Source year, dollar units, owner-labor treatment, aggregate means, and missing figures are explicit. A ratio cannot establish a typical salary or your expected income.
-4. Change customer count, price, delivery costs, fixed costs, and owner-labor value. The result shows arithmetic under those assumptions.
-5. Write one thesis: the customer expense, what you would own, your advantage, the uncertain assumption, a small paid test, and what would make you reject it. Save/export stays in your browser; nothing is sent to other people.
+The assignment asks for a complete machine-learning system: real data stored in the cloud, reproducible training, recorded experiments, a deployed prediction API, and an interactive website. The quality of the model's accuracy is explicitly not graded.
 
-The useful outcome is a clearer business mechanism and a specific assumption to investigate. A winning opportunity and personal wealth have not been established.
+Our question is: **can earlier counts of business locations help estimate next year's count?** Official Census data covers 2019–2023. A Ridge regression model learns from earlier years, a separate year selects its setting, and a reserved year checks the result. The website sends your selected counts to the deployed Python model and displays its answer. The displayed 2024 estimate is a historical exercise, not current 2026 information.
 
-## What is already done for the assignment
+- **ML training** is the Python process that learns the model's numerical settings from historical examples. It already ran and saved the model.
+- **MLflow** records training settings, results, and model artifacts. Four real runs are retained.
+- **API** means a URL accepting a structured request and returning a prediction. The website calls `/predict`.
+- **Docker** packages Python, dependencies, and the commands into a repeatable environment. Its build, training, and serving have passed in GitHub Actions; a teammate still needs to run it locally for the assignment wording.
+- **Pull request (PR)** is a proposed change on a separate GitHub branch for teammates to review. Every member needs their own actual contribution/PR.
 
-The Python project has **61 passing tests**, **12 passed cloud-source reproduction checks**, **four actual finished MLflow runs**, actual hash-verified **Cloudflare R2 storage and training-data retrieval**, and real Gunicorn HTTP/curl checks from a fresh inference-only environment. Aarya and Tanya are the confirmed teammates. Actual [hosted Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) also passed build, train, reproduction, serving, and real HTTP tests. Review the full implementation on the [branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) or [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1); default main still contains initialization. The earlier local-source 40-test evidence is retained as dated history.
+The held-out model error averages **3.06 locations**, versus **2.90** for simply using the previous count. The model's weaker result is reported honestly. The engineering workflow is the main assignment objective.
 
-## What needs finishing
+Verified: cloud ingestion, preprocessing, chronological splits, training, MLflow, saved-model API, public website, 61 tests, 12 reproduction checks, Docker CI, and real public prediction requests. The optional `/ownership` worksheet provides business-research context; it is separate from the ML model.
 
-- Aarya personally reviews draft PR #1 before any approved merge. Tanya completes her own meaningful, personally authored PR; both partners review the work.
-- Build and run Docker training and serving on a teammate's computer. Save the real request results. Hosted Actions Docker CI is already verified; a teammate-machine run still needs recording.
-- Complete the pending Vercel team/workspace grant, deploy the actual Python service, and verify its public frontend/API URLs on desktop and phone.
-- Recheck Canvas instructions, fill the verified links into README/SUBMISSION.md, and have Aarya submit personally after final review. No automatic submission is planned.
+## Remaining team steps
 
-The latest live-browser attempt stopped at the private Site’s ChatGPT sign-in gate (`reports/final_ui_check.json`). Final live ownership controls, export, calculator, market predictions, and phone layout were not rechecked. The earlier local desktop QA reports remain dated evidence. Public Flask deployment remains open. See [STATUS.md](STATUS.md), [DEPLOYMENT.md](DEPLOYMENT.md), [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md), and [SUBMISSION.md](SUBMISSION.md) for evidence and exact next steps.
+1. **Aarya:** read [START_HERE.md](START_HERE.md), use the [live app](https://aipi510-module3-main-street.vercel.app/), and personally review [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1). Correct anything you cannot explain. Mark it ready and merge only after the team review is complete. The implementation is on `aarya/module3-implementation`; `main` still has initialization content.
+2. **Tanya (`Tanya-duke`):** accept the collaborator invitation, independently run the local Docker training/API workflow, record the actual results and any corrections, and open your own PR. [TANYA_START_HERE.md](TANYA_START_HERE.md) has exact commands and branch instructions. Aarya reviews her PR. No completed Tanya contribution is claimed.
+3. **Team:** confirm the Canvas Project Groups roster and any existing online-cohort/team exception. The assignment says partner; the syllabus has different general team wording. Current group membership was not established.
+4. **Course platform interpretation:** actual storage is Cloudflare R2 and the Flask API/frontend run on Vercel. Canvas explicitly allows Vercel for the frontend but names GCS/S3/Firebase/cloud PostgreSQL for storage and Google/AWS/Azure for the API. Functional cloud operation is verified; acceptance of these substitutions is unverified. The GCP console was unavailable in this environment, so no listed-provider migration is claimed.
+5. **Aarya:** after the contributions, reviews, and course checks, submit the repository and frontend links personally using [SUBMISSION.md](SUBMISSION.md). Due **November 24, 2026, 10:30 am Central / 11:30 am Eastern**. No Canvas submission has been made.

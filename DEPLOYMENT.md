@@ -1,6 +1,6 @@
 # Cloud data, containers, and public deployment
 
-Status updated November 22, 2026. This guide distinguishes recorded results from checks still awaiting execution. Use [STATUS.md](STATUS.md) for the current handoff and [SUBMISSION.md](SUBMISSION.md) for the final links.
+Status updated November 23, 2026. This guide distinguishes recorded results from checks still awaiting execution. Use [STATUS.md](STATUS.md) for the current handoff and [SUBMISSION.md](SUBMISSION.md) for the final links.
 
 ## 1. Completed cloud storage and model training
 
@@ -74,7 +74,7 @@ The downloaded artifact `14751147208` has verified SHA-256 `4a86198b544bb540f7e7
 
 The current selected route is **Vercel's Flask/Python hosting**. The app exports a Flask instance from `app.py`, uses the inference-only `requirements.txt`, and includes deployment configuration in `vercel.json`. The serving-only environment has loaded the model and passed real Gunicorn HTTP/curl checks with no MLflow requirement; see [reports/serving_only_http.log](reports/serving_only_http.log) and [reports/deployment-runtime-check.json](reports/deployment-runtime-check.json). This establishes local serving readiness.
 
-**Deployment completed.** Vercel built the actual Flask project from review branch commit `ba6386433cb2b26fab5228992dd13f0cfa5a9c5b` and reports deployment `dpl_6V8j2jMzxtdypBbYfSi7dT3HNgp7` as READY. Build logs confirm GitHub cloning, Python 3.12, pinned dependency installation, completed build, and deployed outputs. Stable public origin: <https://aipi510-module3-main-street.vercel.app/>. The unique build URL requires Vercel authentication; signed-out access to the stable production origin works. No login-protection change was applied. See `reports/public_deployment.json`.
+**Deployment completed.** Vercel built the actual Flask project from review branch commit `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6` and reports deployment `dpl_AkkQfyWPFsSXYMBsffBJPYH2ncQD` as READY. Build logs confirm GitHub cloning, Python 3.12, pinned dependency installation, completed build, and deployed outputs. Stable public origin: <https://aipi510-module3-main-street.vercel.app/>. The unique build URL requires Vercel authentication; signed-out access to the stable production origin works. No login-protection change was applied. See `reports/final_release_review.json` for the current deployment; `reports/public_deployment.json` retains the previous deployment evidence.
 
 The runtime package includes the saved model, cleaned panel, financial snapshot, and geometry. It excludes training logs, raw downloads, the IRS source workbook, and private credentials. Static files are mirrored under `public/static` for this host; the recorded local check verifies those copies match the application sources. Inference requires no training-data token. Training should run before packaging the service.
 
@@ -104,3 +104,9 @@ Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-
 Aarya and Tanya are the confirmed partners. The implementation upload is complete on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation), and [AI-assisted draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) awaits Aarya’s personal review and approval before merge. Tanya’s own meaningful PR remains pending. Preserve each person’s actual authored work and record it in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Both people review the pipeline and limitations.
 
 The actual frontend/API links are filled into README and the prepared Canvas text in [SUBMISSION.md](SUBMISSION.md). Complete the remaining checks in [REQUIREMENTS.md](REQUIREMENTS.md). Aarya reviews the final repository and public service, then completes the Canvas submission personally. No automated submission is planned. Record the observed Canvas result and timestamp afterward.
+
+## Current release and provider interpretation
+
+The new research-first homepage is deployed. Current Docker run 45284798476 passed all build/train/reproduction/serve/HTTP steps. `reports/final_public_http_smoke.json` passes all public checks. Earlier CI artifacts above retain their original run IDs and hashes.
+
+R2 and Vercel Flask hosting are operational. Canvas explicitly names Vercel for the frontend and other providers for storage/API. Acceptance of these substitutions is unverified; see REQUIREMENTS.md. The GCP console was inaccessible in this environment; no GCP deployment is claimed.
