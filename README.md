@@ -157,4 +157,4 @@ Shortlists and worksheet inputs are stored in the browser. The dataset contains 
 
 Aarya's [implementation PR](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) contains the initial pipeline and application. Tanya's [reproduction PR](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/2) contains the local Docker review and related improvements. [PR #3](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/3) adds GCS and Cloud Run deployment.
 
-Related prior work: [Week 12 Iris pipeline](https://github.com/AaryaDeshpande/aipi510-week12-ml-pipeline) for pipeline patterns and [Module 1 local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen) for market-research context. ChatGPT and Codex supported development and documentation.
+Related prior work: [Week 12 Iris pipeline](https://github.com/AaryaDeshpande/aipi510-week12-ml-pipeline) for pipeline patterns and [Module 1 local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen) for market-research context.
