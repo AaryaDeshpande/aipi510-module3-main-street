@@ -10,16 +10,14 @@ The supplementary ownership worksheet uses dated company examples to explain cus
 
 The economics context is a separately audited IRS 2023 Wisconsin Schedule C snapshot with 32 selected industry groups. Its source workbook is included at `data/economics_source.xlsx`; regenerate with `python scripts/prepare_economics.py` after installing development dependencies. `config.yaml` pins the JSON snapshot hash. Dollar units, suppressed values, owner-labor treatment, filing-address geography, and aggregate-mean limits are explicit. The financial snapshot is not an input to the CBP prediction model. A state-industry margin model was explored separately and is not claimed as a validated opportunity predictor.
 
-**Status, November 23:** the public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks and [current Docker CI](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) are verified. The [implementation branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) and [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) await the team's real review/contributions; `main` still contains initialization. Tanya-duke has been invited. See [TEAM_ACTIONS.md](TEAM_ACTIONS.md) for local Docker, member PRs, Canvas roster, provider-equivalence and submission steps. R2/Vercel are operational; acceptance as alternatives to the named storage/API providers remains unverified.
+**Status:** public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks, Docker CI, and the independent local Docker reproduction are verified. Tanya's Docker review is recorded in `reports/tanya_docker_review.md`; commit and PR submission are pending.
 
 ## Submission links
 
-- GitHub repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>; current implementation: [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation) and [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) (public repository; personal review pending)
-- Successful Docker CI: [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476)
-- Live frontend: <https://aipi510-module3-main-street.vercel.app/>
-- Deployed prediction API: <https://aipi510-module3-main-street.vercel.app/predict> — JSON POST; see the request example below
-- [Canvas assignment](https://canvas.duke.edu/courses/83524/assignments/363937)
-- Verified Canvas deadline: **November 24, 2026, 11:30 am Eastern / 10:30 am Central**. Accuracy is explicitly excluded from assessment. Current source findings: `reports/canvas_access_review.json`.
+- GitHub repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>
+- Implementation branch: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation>
+- Draft implementation PR: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1>
+- Tanya Docker review: completed; commit and PR submission pending
 
 The same Flask service serves the frontend and JSON API. Its public root URL provides the frontend, and the browser calls `/predict` on that host.
 
@@ -64,9 +62,7 @@ The API's **2024 estimates use 2023 and 2022 counts**. They are unverified histo
 
 Splits separate reference years. Because Census publishes these observations after the reference year, this experiment is not a simulated real-time forecasting backtest. The Wisconsin-only held-out subset has 617 complete histories: model MAE 2.2174 and persistence MAE 1.9951. Those local errors are also visible in the interface.
 
-Current executed checks on November 22: **61 tests passed** (`reports/pytest.txt`), all **12 cloud-source reproduction checks passed** (`reports/reproducibility.json`), and **four actual MLflow runs finished** (`reports/mlflow_runs.json`). Training and inference-only environments both pass `pip check`; the fresh inference-only environment loads the saved model without MLflow and passes real Gunicorn HTTP/curl checks (`reports/serving_only_http.log`). The current evidence summary is `reports/environment_checks.json`; the earlier 40-test run is retained separately in `reports/environment_checks_earlier.json`. Desktop browser flows are recorded in `reports/browser_checks.json` and `reports/ownership_browser_checks.json`. Hosted Docker execution now passes as described below. Public Flask HTTP and desktop checks are recorded in `reports/public_http_smoke.json` and `reports/public_browser_checks.json`. Teammate-machine Docker, phone review, and human contribution gates remain open.
-
-Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-module3-main-street.vercel.app>. Live desktop checks cover ownership controls, calculator with owner labor, thesis save/restore/export/clear, county filters, unknown cells, a real browser prediction, and shortlist CSV download. See `reports/public_http_smoke.json`, `reports/public_deployment.json`, and `reports/public_browser_checks.json`. Phone/device review and a simulated frontend request failure remain unexecuted. The earlier private-Site gate in `reports/final_ui_check.json` is historical evidence.
+Executed checks include 61 tests, 12 cloud-source reproduction checks, four MLflow runs, Docker build/train/serve checks, public HTTP checks, and browser prediction checks. Evidence is in `reports/pytest.txt`, `reports/reproducibility.json`, `reports/mlflow_runs.json`, `reports/tanya_docker_review.md`, `reports/public_http_smoke.json`, and `reports/public_browser_checks.json`.
 
 ## Run locally
 
@@ -138,9 +134,9 @@ docker run --rm --user "$(id -u):$(id -g)" \
   main-street-explorer train --data-uri data/panel.csv --output-dir /output
 ```
 
-The commands are Linux/macOS examples. Windows users should adapt volume/user syntax to their Docker setup. The hosted Actions run below passed actual container execution. The assignment's local build/run wording still calls for a teammate-machine run and recorded results.
+The commands are Linux/macOS examples. Windows users should adapt volume/user syntax to their Docker setup. Docker build, training, serving, and HTTP results are in `reports/tanya_docker_review.md`.
 
-**Hosted Docker CI passed:** [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6`. `reports/final_release_review.json` records the current successful job. Earlier downloaded CI artifacts are retained in `reports/ci/` with their original provenance. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
+**Hosted Docker CI passed:** [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. Local Docker reproduction is recorded in `reports/tanya_docker_review.md`.
 
 The [workflow](.github/workflows/verify.yml) uses Python 3.12 and pinned development dependencies, runs the full tests and Docker checks, and uploads real evidence. The downloaded artifact `14751147208` was verified against SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; provenance is in `reports/ci/artifact_provenance.json`. It uses the frozen local panel and no cloud credentials. The actual R2-ingested run is documented separately.
 
@@ -152,8 +148,4 @@ The training-data service is Cloudflare R2 behind the authenticated review endpo
 
 This original business application was prepared with AI assistance. It reuses engineering patterns/helpers from the separate local Iris review implementation prepared in this conversation: data hashing, a CLI, MLflow tracking, saved-artifact serving, and Docker structure. The business cleaning, regression target, chronological evaluation, geography, and visual research workflow are project-specific additions. No Iris accuracy or test result is evidence for this model.
 
-Earlier learning source: [Aarya's Week 12 Iris pipeline](https://github.com/AaryaDeshpande/aipi510-week12-ml-pipeline), notebook blob SHA `cce4e60e1ecf3a3bc01b94cc2c5d7f94ad5888f6`. Its use of scikit-learn pipelines and separate evaluation motivated the workflow; the present model is a different regression experiment. Cite any further external snippets/templates and record real authorship. The syllabus recommends AI citation and requires citation of reused external code.
-
-Earlier research source: [Aarya's Module 1 national local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen). That project provides prior market-screening research and context. The Module 3 regression target, chronological splits, model training, experiment tracking, and serving pipeline are distinct work; Module 1 results are not evidence for this model.
-
-**Teammates: Aarya Deshpande and Tanya Sharma (`Tanya-duke`).** Personal review and genuine contributions are recorded in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md); Tanya's independent Docker/PR instructions are in [TANYA_START_HERE.md](TANYA_START_HERE.md). The collaborator invitation is awaiting acceptance. Aarya completes Canvas submission after team review.
+**Team:** Aarya Deshpande and Tanya Sharma (`Tanya-duke`). Status and instructions are in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) and [TANYA_START_HERE.md](TANYA_START_HERE.md).

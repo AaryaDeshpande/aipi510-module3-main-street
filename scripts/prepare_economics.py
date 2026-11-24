@@ -1,5 +1,5 @@
 """Freeze latest Wisconsin Schedule C observations with correct units/unknowns."""
-import ast,hashlib,json
+import hashlib,json
 from pathlib import Path
 import openpyxl
 CODES = ['236000','237000','238000','311000','321000','323000','423000','424000','425000','484000','493000','531000','532000','541100','541200','541300','541400','541500','541600','541700','541800','541900','561000','562000','611000','621000','624000','711000','713000','721000','722000','811000','812000']

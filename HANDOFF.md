@@ -1,15 +1,9 @@
 # Continuation handoff
 
-Updated November 23, 2026. The research-first homepage and public Flask API are deployed and verified at https://aipi510-module3-main-street.vercel.app/. Source `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6`; deployment `dpl_AkkQfyWPFsSXYMBsffBJPYH2ncQD`. The saved model and data were not retrained or replaced during the presentation update.
+The public frontend and Flask API are deployed at <https://aipi510-module3-main-street.vercel.app/>. Docker CI and local Docker reproduction pass. Public smoke evidence is in `reports/final_public_http_smoke.json`, and local Docker evidence is in `reports/tanya_docker_review.md`.
 
-Current Docker CI: https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476 — success. Public smoke: `reports/final_public_http_smoke.json` — all six check groups pass. Browser prediction: 281.2 model versus 276 persistence for Dane/building-equipment. Details: `reports/final_release_review.json`.
+## Remaining actions
 
-Source is on `aarya/module3-implementation`; PR #1 remains draft and unmerged for Aarya's real review. Historical reports keep their original scope; STATUS.md and REQUIREMENTS.md describe current state.
-
-## Remaining team steps
-
-1. **Aarya:** read [START_HERE.md](START_HERE.md), use the [live app](https://aipi510-module3-main-street.vercel.app/), and personally review [draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1). Correct anything you cannot explain. Mark it ready and merge only after the team review is complete. The implementation is on `aarya/module3-implementation`; `main` still has initialization content.
-2. **Tanya (`Tanya-duke`):** accept the collaborator invitation, independently run the local Docker training/API workflow, record the actual results and any corrections, and open your own PR. [TANYA_START_HERE.md](TANYA_START_HERE.md) has exact commands and branch instructions. Aarya reviews her PR. No completed Tanya contribution is claimed.
-3. **Team:** confirm the Canvas Project Groups roster and any existing online-cohort/team exception. The assignment says partner; the syllabus has different general team wording. Current group membership was not established.
-4. **Course platform interpretation:** actual storage is Cloudflare R2 and the Flask API/frontend run on Vercel. Canvas explicitly allows Vercel for the frontend but names GCS/S3/Firebase/cloud PostgreSQL for storage and Google/AWS/Azure for the API. Functional cloud operation is verified; acceptance of these substitutions is unverified. The GCP console was unavailable in this environment, so no listed-provider migration is claimed.
-5. **Aarya:** after the contributions, reviews, and course checks, submit the repository and frontend links personally using [SUBMISSION.md](SUBMISSION.md). Due **November 24, 2026, 10:30 am Central / 11:30 am Eastern**. No Canvas submission has been made.
+1. Tanya commits and pushes `reports/tanya_docker_review.md`, then opens a PR.
+2. Aarya reviews the implementation and Tanya's contribution.
+3. Confirm provider-interpretation requirements and complete the Canvas submission.
