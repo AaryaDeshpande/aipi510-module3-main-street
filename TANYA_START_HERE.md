@@ -1,20 +1,23 @@
 # Tanya's independent contribution
 
-Account confirmed: **[Tanya-duke](https://github.com/Tanya-duke)**. Her authored [Module 2 PR #3](https://github.com/AaryaDeshpande/aipi510-module2-abbeyroad-sampling/pull/3) verifies this identity. Your Module 3 collaborator invitation has been sent. GitHub currently shows Awaiting Tanya-duke’s response. Accept the invitation before pushing your branch to this repository.
+Complete the Docker training and serving reproduction on the `tanya/docker-reproduction` branch.
 
-## Your task
+## Tasks
 
-Independently reproduce the Docker training and serving workflow, verify predictions and the reported baseline comparison, and contribute your actual execution record plus any correction you discover. Your own branch, commit, and PR establish your contribution. A prepared template is a starting point; it does not claim you completed the work.
+1. Build the Docker image.
+2. Train the model into `container-artifacts/` without modifying tracked `artifacts/`.
+3. Start the containerized application.
+4. Check `/health`, a valid `/predict` request, and an empty-object `/predict` request.
+5. Open the local application and verify the 2024 estimate is labeled historical.
+6. Compare model and dataset hashes and test MAE against the README.
+7. Save actual results in `reports/tanya_docker_review.md`.
+8. Commit and push the branch, then open a PR back to `aarya/module3-implementation`.
 
-Start with Docker Desktop installed and running on your Mac. Allow time for the first image/dependency download. From Terminal:
+## Commands
 
 ```bash
-git clone --branch aarya/module3-implementation https://github.com/AaryaDeshpande/aipi510-module3-main-street.git
-cd aipi510-module3-main-street
 git fetch origin
 git switch -c tanya/docker-reproduction origin/aarya/module3-implementation
-git rev-parse HEAD
-docker version
 docker build -t main-street-review .
 mkdir -p container-artifacts
 docker run --rm --user "$(id -u):$(id -g)" \
@@ -25,7 +28,7 @@ docker run --rm -p 8080:8080 \
   main-street-review
 ```
 
-The final command keeps the API running. In a second terminal:
+In a second terminal:
 
 ```bash
 curl --fail --silent --show-error http://localhost:8080/health
@@ -38,23 +41,14 @@ curl --silent --show-error -i \
   http://localhost:8080/predict
 ```
 
-Open http://localhost:8080/ and run a prediction from the map. A valid JSON prediction should succeed; the empty object should return HTTP 422. Compare the health and prediction model hashes with `container-artifacts/metadata.json`. Check its test MAE against the README (model 3.0594, baseline 2.9016) and verify the displayed 2024 estimate is labeled historical. Do not overwrite the tracked `artifacts/` directory with your local rerun.
+The valid request should return HTTP 200. The empty object should return HTTP 422. Use `reports/tanya_review_template.md` as a checklist, but report only actual results.
 
-Stop the running container with Control-C after review. Independently fill `reports/tanya_review_template.md`, then save your completed record as `reports/tanya_docker_review.md`. Include the actual date, tested commit, Docker/OS versions, commands, results, model/data hashes, and what you personally checked. Describe any failure honestly; a real fix is a valuable contribution. Omit credentials, private tokens, and unrelated machine details.
+## Expected model explanation
 
-```bash
-git add reports/tanya_docker_review.md
-# Add any actual source/test fixes you made as well.
-git commit -m "Record independent Docker reproduction and model review"
-git push -u origin tanya/docker-reproduction
-```
+The model learns next-year establishment change from industry and current/previous counts. Training targets 2021, validation targets 2022, and test targets 2023. The three Ridge settings are selected by validation MAE, and the final model is evaluated once on the 2023 test split. The no-change baseline currently has lower held-out MAE.
 
-Use your own GitHub identity. In GitHub, open a PR with **base `aarya/module3-implementation`**, **compare `tanya/docker-reproduction`**. Aarya reviews it. If PR #1 has already been approved and merged when you start, branch from updated main and target main instead. If you lack write access, you may use a fork and open your PR back to this repository.
+## Submission
 
-## What you should be able to explain
+The Docker reproduction and review are complete. The branch is committed and pushed as `tanya/docker-reproduction`.
 
-The model learns next-year establishment change from current/previous counts and industry. Training targets 2021, validation targets 2022, and the reserved test targets 2023. Preprocessing is learned on training data. Three Ridge settings are compared on validation data. Four real MLflow runs record that selection and final evaluation. The model is saved and used by `/predict`; the webpage calls that endpoint. The model has higher average absolute test error than the no-change baseline, which remains visible.
-
-## Separate course check
-
-The syllabus says teams of three with different teammates for each project. The working roster is Aarya and Tanya, who also worked together previously. Confirm the current Canvas assignment's online-cohort/team exception or existing instructor approval before submitting. This document does not establish that exception.
+Open a PR from `tanya/docker-reproduction` to `aarya/module3-implementation`. If PR #1 has merged, branch from and target updated `main` instead.
