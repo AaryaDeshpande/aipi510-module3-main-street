@@ -1,7 +1,7 @@
 {
   "checked_utc": "2026-11-24T16:22:04.507312+00:00",
   "base_url": "https://aipi510-module3-main-street.vercel.app",
-  "scope": "Fresh post-migration public HTTP checks and recorded-artifact arithmetic; training and Docker execution are evidenced separately.",
+  "scope": "Public HTTP endpoints, loaded model/data hashes, and held-out evaluation checks.",
   "passed": true,
   "checks": [
     {
