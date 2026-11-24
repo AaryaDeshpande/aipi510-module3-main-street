@@ -26,7 +26,13 @@ def load_panel(uri: str, expected_hash: str, root: Path = ROOT):
         blob.reload()
         if blob.size is None or blob.size > 30_000_000:
             raise ValueError("Dataset is unavailable or exceeds 30 MB")
-        content = blob.download_as_bytes()
+        if blob.generation is None:
+            raise ValueError("GCS object generation is unavailable")
+        content = blob.download_as_bytes(if_generation_match=blob.generation)
+        storage_evidence = {"storage_provider": "google-cloud-storage",
+            "bucket": parts.netloc, "object_key": parts.path.lstrip("/"),
+            "object_generation": str(blob.generation),
+            "crc32c": blob.crc32c, "md5_hash": blob.md5_hash}
     elif parts.scheme == "https":
         if uri == SITES_PANEL_URL:
             bearer = os.environ.get("SITES_DATA_BEARER")

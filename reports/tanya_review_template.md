@@ -1,21 +1,20 @@
-# TEMPLATE — independent Docker and model review
+# Independent Docker and model review
 
-**Uncompleted template.** Tanya fills this from her actual execution and saves the completed version as `reports/tanya_docker_review.md` in her own PR.
+Complete this record from an actual local Docker execution and save it as `reports/tanya_docker_review.md`.
 
 - Reviewer/GitHub identity:
-- Actual date and time zone:
-- Tested source commit (`git rev-parse HEAD`):
-- OS and Docker versions:
-- Exact commands executed (attach concise output/logs):
-- Docker build result and exit status:
-- Container training result and exit status:
-- Model/data hashes in container training metadata:
-- `/health` status and actual body:
-- Valid `/predict` status and actual body:
-- Empty-object request status and actual body:
-- Model hash agreement across metadata, health, prediction:
-- Test MAE and baseline MAE independently checked:
-- Browser prediction and historical-year label checked:
-- Issues discovered and actual fixes:
-- Checks not executed or blocked:
-- What I personally changed and learned:
+- Actual date:
+- Tested source commit:
+- OS and Docker/engine versions:
+- Exact commands executed:
+- Docker build exit status:
+- Container training exit status:
+- Model and data SHA-256 hashes:
+- `/health` status and body:
+- Valid `/predict` status and body:
+- Empty-object `/predict` status and body:
+- Hash agreement across metadata, `/health`, and `/predict`:
+- Test MAE and no-change baseline MAE:
+- Browser prediction and 2024 historical-label check:
+- Issues discovered and fixes:
+- Checks not executed:

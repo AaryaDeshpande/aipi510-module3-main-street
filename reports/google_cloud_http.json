@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-11-24T16:19:44.945551+00:00",
+  "base_url": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app",
+  "passed": true,
+  "checks": [
+    "health",
+    "frontend_served",
+    "real_catalog_and_model_hash",
+    "72_county_geometries",
+    "three_real_json_predictions",
+    "invalid_inputs_rejected"
+  ],
+  "model_sha256": "ef35df21bad9220e68be1133d2a051305201240d604c7ee7d94c3c5ecba71ef6"
+}

@@ -1,4 +1,6 @@
 .venv/
+.DS_Store
+.vercel/
 __pycache__/
 .pytest_cache/
 artifacts/tracking/

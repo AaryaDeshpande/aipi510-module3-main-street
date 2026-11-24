@@ -104,3 +104,22 @@ def test_matching_object_headers_cannot_override_modified_body(monkeypatch):
     monkeypatch.setattr("business_app.data.requests.get", Mock(return_value=response))
     with pytest.raises(ValueError, match="SHA-256"):
         load_panel(SITES_PANEL_URL, DIGEST)
+
+
+def test_gcs_generation_is_pinned_and_modified_content_is_rejected(monkeypatch):
+    from google.cloud import storage
+    blob = Mock(size=len(CSV), generation=123, crc32c="test-crc", md5_hash="test-md5")
+    blob.download_as_bytes.return_value = CSV
+    client = Mock()
+    client.bucket.return_value.blob.return_value = blob
+    monkeypatch.setattr(storage, "Client", Mock(return_value=client))
+    _, evidence = load_panel("gs://test-bucket/panel.csv", DIGEST)
+    blob.download_as_bytes.assert_called_once_with(if_generation_match=123)
+    assert evidence["storage_provider"] == "google-cloud-storage"
+    assert evidence["object_generation"] == "123"
+    assert evidence["bucket"] == "test-bucket"
+    assert evidence["object_key"] == "panel.csv"
+    assert evidence["cloud_ingestion_verified"] is True
+    blob.download_as_bytes.return_value = CSV + b"changed"
+    with pytest.raises(ValueError, match="SHA-256"):
+        load_panel("gs://test-bucket/panel.csv", DIGEST)

@@ -70,9 +70,6 @@ def create_app(artifact_dir: Path | None = None):
                 "history": [{"year": year, "establishments": int(r.establishments) if (r := records.get((county["fips"], industry, year))) else None} for year in range(2019, latest + 1)],
                 "backtest": {"target_year": int(backtest.target_year), "actual": int(backtest.actual_next), "prediction": float(backtest.prediction), "baseline": int(backtest.baseline)} if backtest else None})
     public_model = {key: metadata[key] for key in ["test", "baseline_test", "validation", "baseline_validation", "selected_model", "alpha", "model_beats_baseline", "validation_beats_baseline", "test_skill_vs_persistence", "forecast_year", "as_of_year", "train_target_year", "validation_target_year", "test_target_year", "split_counts", "model_sha256", "scope"]}
-    for key in ["wisconsin_test", "wisconsin_baseline_test", "wisconsin_test_rows"]:
-        if key in metadata: public_model[key] = metadata[key]
-    public_model["training_target_year"] = metadata["train_target_year"]
     sources = [{"name": "Census County Business Patterns: downloadable data", "url": "https://www.census.gov/programs-surveys/cbp/data/datasets.html"},
         {"name": "Census methodology and disclosure rules", "url": "https://www.census.gov/programs-surveys/cbp/technical-documentation/methodology.html"},
         {"name": "Current release status (latest reference year 2023)", "url": "https://www.census.gov/programs-surveys/cbp/data.html"},

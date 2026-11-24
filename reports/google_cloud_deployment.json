@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-11-24T16:20:39.678164+00:00",
+  "project_id": "linen-flux-439023-g2",
+  "region": "us-central1",
+  "service": "main-street-business-explorer",
+  "url": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app",
+  "predict_url": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app/predict",
+  "revision": "main-street-business-explorer-00001-btp",
+  "build_id": "4c143552-dcbb-404e-b808-1391e41c7e67",
+  "build_status": "SUCCESS",
+  "build_log_url": "https://console.cloud.google.com/cloud-build/builds/4c143552-dcbb-404e-b808-1391e41c7e67?project=492705417018",
+  "image_digest": "sha256:179759a100383a08c05ba49ea6309df1dd441c1acebc9479bff1d98700235fe9",
+  "public_http_passed": true,
+  "model_sha256": "ef35df21bad9220e68be1133d2a051305201240d604c7ee7d94c3c5ecba71ef6",
+  "existing_billing_verified": true,
+  "billing_account_created_or_linked": false,
+  "max_instances": 1,
+  "min_instances": 0,
+  "scope": "Actual GCS-sourced training, Cloud Build Docker build, public Cloud Run deployment, and tested Vercel API rewrites preserving submitted URL.",
+  "vercel": {
+    "deployment_id": "dpl_E2qehMesLBJ9Kp6RshpvMnuVXVT3",
+    "state": "READY",
+    "commit": "2cd31f66c2cdeb5ed4edbbcc40c75346dfc3e346",
+    "frontend_url": "https://aipi510-module3-main-street.vercel.app/",
+    "api_proxy_http_passed": true,
+    "cloud_run_trace_header_observed": true,
+    "model_hash_matches_cloud_run": true,
+    "real_browser_prediction_after_migration": {
+      "model": 281.2,
+      "baseline": 276
+    }
+  }
+}

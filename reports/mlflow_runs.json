@@ -1,13 +1,13 @@
 {
-  "exported_utc": "2026-11-22T10:35:31.715538+00:00",
+  "exported_utc": "2026-11-24T16:14:54.469777+00:00",
   "runs": [
     {
-      "run_id": "43f5001b46f2442f815ff96fe8a7457f",
+      "run_id": "eedc114e01c54e7f92ae0f41424624de",
       "name": "validation-ridge-alpha-1",
       "status": "FINISHED",
       "parameters": {
         "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "code_sha256": "2b0d40909011131c4499b10084971758849c7e991135ccaeaff85777ead7aa90",
         "train_target_year": "2021",
         "validation_target_year": "2022",
         "test_target_year": "2023",
@@ -20,22 +20,22 @@
         "stage": "validation"
       },
       "metrics": {
-        "validation_mae": 3.4101333990532794,
-        "validation_median_ae": 1.3625195749786272,
-        "validation_rmse": 10.315096782488807,
-        "validation_wape": 0.04584655136709776
+        "validation_mae": 3.4101333990527154,
+        "validation_median_ae": 1.362519574980233,
+        "validation_rmse": 10.3150967824817,
+        "validation_wape": 0.04584655136709018
       },
       "artifacts": [
         "split_ids.json"
       ]
     },
     {
-      "run_id": "51be3601c01e4f928351459c97af225f",
+      "run_id": "c7962715ec4c419787873f7566e60e51",
       "name": "validation-ridge-alpha-10",
       "status": "FINISHED",
       "parameters": {
         "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "code_sha256": "2b0d40909011131c4499b10084971758849c7e991135ccaeaff85777ead7aa90",
         "train_target_year": "2021",
         "validation_target_year": "2022",
         "test_target_year": "2023",
@@ -48,22 +48,22 @@
         "stage": "validation"
       },
       "metrics": {
-        "validation_mae": 3.4183304601117914,
-        "validation_median_ae": 1.3685446705061572,
-        "validation_rmse": 10.417385781152175,
-        "validation_wape": 0.04595675438173133
+        "validation_mae": 3.4183304601117723,
+        "validation_median_ae": 1.3685446705061022,
+        "validation_rmse": 10.417385781151875,
+        "validation_wape": 0.04595675438173107
       },
       "artifacts": [
         "split_ids.json"
       ]
     },
     {
-      "run_id": "488622b876aa4f9185729e1bccc82b7d",
+      "run_id": "dbfc51b05ff24d348cf2472612c1c529",
       "name": "validation-ridge-alpha-100",
       "status": "FINISHED",
       "parameters": {
         "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "code_sha256": "2b0d40909011131c4499b10084971758849c7e991135ccaeaff85777ead7aa90",
         "train_target_year": "2021",
         "validation_target_year": "2022",
         "test_target_year": "2023",
@@ -78,7 +78,7 @@
       "metrics": {
         "validation_mae": 3.4159943982415824,
         "validation_median_ae": 1.3674081506914453,
-        "validation_rmse": 10.42581880050639,
+        "validation_rmse": 10.425818800506338,
         "validation_wape": 0.04592534787412697
       },
       "artifacts": [
@@ -86,12 +86,12 @@
       ]
     },
     {
-      "run_id": "0885f4f0d9824703b82b9844d6d343ac",
+      "run_id": "0b079617e67946f180e8b4d132d1d6d4",
       "name": "selected-ridge-final-test",
       "status": "FINISHED",
       "parameters": {
         "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-        "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
+        "code_sha256": "2b0d40909011131c4499b10084971758849c7e991135ccaeaff85777ead7aa90",
         "train_target_year": "2021",
         "validation_target_year": "2022",
         "test_target_year": "2023",
@@ -104,10 +104,10 @@
         "stage": "test"
       },
       "metrics": {
-        "test_mae": 3.0593603978699737,
-        "test_median_ae": 1.2708668543223833,
-        "test_rmse": 8.640868334840418,
-        "test_wape": 0.040711904980523884,
+        "test_mae": 3.05936039786979,
+        "test_median_ae": 1.2708668543141393,
+        "test_rmse": 8.640868334833293,
+        "test_wape": 0.040711904980521435,
         "baseline_test_mae": 2.9015736901620808,
         "baseline_test_median_ae": 1.0,
         "baseline_test_rmse": 9.098978809669601,

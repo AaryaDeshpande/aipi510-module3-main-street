@@ -1,7 +1,7 @@
 {
   "dataset": {
     "sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-    "uri": "https://aarya-main-street-20261122.ad277.chatgpt.site/training-data/panel.csv"
+    "uri": "gs://linen-flux-439023-g2-aipi510-m3/aipi510-module3/panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv"
   },
   "economics": {
     "sha256": "40dee08c33ac6357d5c7a1270856c0b39b158870e434c7a1a95c62c28e1d1daa",
