@@ -25,7 +25,7 @@ A reproducible Census CBP pipeline predicts next-year establishment counts using
 
 ## Remaining actions
 
-1. Review/integrate this audit branch so main includes Tanya's existing PR #2 and current status documents.
+1. Review audit integration PR #3, which includes Tanya's existing contribution and current status documents.
 2. Review actual GCS/Cloud Run deployment and HTTP evidence; retain the existing submitted frontend URL.
 3. Review the project personally and confirm the Docker-report version entry.
 4. Confirm Canvas group membership, current deadline and receipt personally. No assistant Canvas submission is authorized.
