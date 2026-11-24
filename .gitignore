@@ -13,3 +13,7 @@ reports/browser/
 .openai/
 data/raw/
 container-artifacts/
+
+# Generated verification output
+reports/ci/
+reports/*.log

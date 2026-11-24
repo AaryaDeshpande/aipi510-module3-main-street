@@ -12,11 +12,9 @@
   "image_digest": "sha256:179759a100383a08c05ba49ea6309df1dd441c1acebc9479bff1d98700235fe9",
   "public_http_passed": true,
   "model_sha256": "ef35df21bad9220e68be1133d2a051305201240d604c7ee7d94c3c5ecba71ef6",
-  "existing_billing_verified": true,
-  "billing_account_created_or_linked": false,
   "max_instances": 1,
   "min_instances": 0,
-  "scope": "Actual GCS-sourced training, Cloud Build Docker build, public Cloud Run deployment, and tested Vercel API rewrites preserving submitted URL.",
+  "scope": "GCS training, Cloud Build container build, Cloud Run serving, and Vercel API routing.",
   "vercel": {
     "deployment_id": "dpl_E2qehMesLBJ9Kp6RshpvMnuVXVT3",
     "state": "READY",
