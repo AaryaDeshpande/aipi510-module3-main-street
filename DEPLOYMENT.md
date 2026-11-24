@@ -38,20 +38,16 @@ The GCS `upload-data` helper is an alternative implementation retained in the so
 
 ## 2. Build and execute Docker locally
 
-The assignment explicitly asks for actual local Docker execution. A prepared Dockerfile is one part of that requirement. The actual [successful Actions run](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) executed containers on a hosted Ubuntu runner. Retain that CI evidence and add a teammate-machine run for the local requirement.
-
-From the reviewed project directory on a machine with Docker running:
+Build and run the image from the project directory:
 
 ```bash
 docker build -t main-street-explorer .
 mkdir -p container-artifacts
-docker run --rm --user "$(id -u):$(id -g)" \
-  -v "$PWD/container-artifacts:/output" \
-  main-street-explorer train --data-uri data/panel.csv --output-dir /output
-docker run --rm -p 8080:8080 \
-  -v "$PWD/container-artifacts:/app/artifacts:ro" \
-  main-street-explorer
+docker run --rm --user "$(id -u):$(id -g)" -v "$PWD/container-artifacts:/output" main-street-explorer train --data-uri data/panel.csv --output-dir /output
+docker run --rm -p 8080:8080 -v "$PWD/container-artifacts:/app/artifacts:ro" main-street-explorer
 ```
+
+Hosted CI and local Docker evidence are retained in `reports/ci/` and `reports/tanya_docker_review.md`. Do not overwrite tracked `artifacts/` during local training.
 
 These are Linux/macOS volume and user examples. Adapt them to the teammate's Windows Docker setup if needed. The last command serves the artifacts just trained in the container. In another activated terminal:
 
@@ -66,7 +62,7 @@ curl --fail --silent --show-error \
 
 Retain build/train/serve logs, machine/runtime details, exit results, HTTP results, and model/data hashes. Local-snapshot container training tests container execution; the cloud-ingested run in step 1 provides its own evidence. Keep temporary container outputs outside the tracked final artifacts. Stop the serving container after checking it, and rebuild after a final code/model change.
 
-**Hosted Docker CI passed:** [run 45013764218](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45013764218) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. The tested commit is `520e0d1b3b52d80173ef2920a663943784aab8a3`. `reports/ci_observation.json` records the successful job, and `reports/ci/` retains downloaded execution evidence. This establishes hosted Ubuntu execution; a teammate-machine Docker run remains separate.
+**Hosted Docker CI passed:** [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. Local Docker evidence is in `reports/tanya_docker_review.md`.
 
 The downloaded artifact `14751147208` has verified SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; its provenance and retained reports are in `reports/ci/`. The workflow uses the local frozen snapshot, does not deploy, and needs no cloud tokens.
 
@@ -97,16 +93,32 @@ Compare the returned model and dataset hashes with the final artifacts. Check si
 
 The source years and model limitation must remain visible: observations end in 2023, displayed 2024 estimates are unverified historical estimates, and model test MAE is higher than the no-change baseline. Only record public checks after executing them against the deployed origin.
 
-Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-module3-main-street.vercel.app>. Live desktop checks cover ownership controls, calculator with owner labor, thesis save/restore/export/clear, county filters, unknown cells, a real browser prediction, and shortlist CSV download. See `reports/public_http_smoke.json`, `reports/public_deployment.json`, and `reports/public_browser_checks.json`. Phone/device review and a simulated frontend request failure remain unexecuted. The earlier private-Site gate in `reports/final_ui_check.json` is historical evidence.
+Public Flask deployment and signed-out HTTP checks now pass at <https://aipi510-module3-main-street.vercel.app>. Live desktop checks cover ownership controls, calculator with owner labor, thesis save/restore/export/clear, county filters, unknown cells, a real browser prediction, and shortlist CSV download. See `reports/public_http_smoke.json`, `reports/public_deployment.json`, and `reports/public_browser_checks.json`. Phone/device review and a simulated frontend request failure remain unexecuted.
 
-## 5. Finish team review and submission
+# Deployment and verification
 
-Aarya and Tanya are the confirmed partners. The implementation upload is complete on the [review branch](https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation), and [AI-assisted draft PR #1](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1) awaits Aarya’s personal review and approval before merge. Tanya’s own meaningful PR remains pending. Preserve each person’s actual authored work and record it in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Both people review the pipeline and limitations.
+## Public deployment
 
-The actual frontend/API links are filled into README and the prepared Canvas text in [SUBMISSION.md](SUBMISSION.md). Complete the remaining checks in [REQUIREMENTS.md](REQUIREMENTS.md). Aarya reviews the final repository and public service, then completes the Canvas submission personally. No automated submission is planned. Record the observed Canvas result and timestamp afterward.
+- Frontend/API: <https://aipi510-module3-main-street.vercel.app/>
+- Cloud storage: Cloudflare R2
+- Public evidence: `reports/public_http_smoke.json`
+- Docker evidence: `reports/tanya_docker_review.md`
 
-## Current release and provider interpretation
+## Docker reproduction
 
-The new research-first homepage is deployed. Current Docker run 45284798476 passed all build/train/reproduction/serve/HTTP steps. `reports/final_public_http_smoke.json` passes all public checks. Earlier CI artifacts above retain their original run IDs and hashes.
+Build and run the image from the project directory:
 
-R2 and Vercel Flask hosting are operational. Canvas explicitly names Vercel for the frontend and other providers for storage/API. Acceptance of these substitutions is unverified; see REQUIREMENTS.md. The GCP console was inaccessible in this environment; no GCP deployment is claimed.
+```bash
+docker build -t main-street-explorer .
+mkdir -p container-artifacts
+docker run --rm --user "$(id -u):$(id -g)" -v "$PWD/container-artifacts:/output" main-street-explorer train --data-uri data/panel.csv --output-dir /output
+docker run --rm -p 8080:8080 -v "$PWD/container-artifacts:/app/artifacts:ro" main-street-explorer
+```
+
+Keep temporary container artifacts outside the tracked `artifacts/` directory.
+
+## Remaining actions
+
+- Confirm provider interpretation.
+- Tanya opens a PR for the completed and pushed Docker review.
+- Aarya completes team review and final Canvas submission.
