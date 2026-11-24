@@ -11,7 +11,7 @@
 | Flask `/predict` endpoint | Complete |
 | Public frontend/API | Complete |
 | README and limitations | Complete |
-| Member branches and PRs | Tanya Docker work complete; commit/PR pending; Aarya draft PR exists |
+| Member branches and PRs | Tanya Docker work committed/pushed; PR pending; Aarya draft PR exists |
 | Final Canvas submission | Pending |
 
 ## Open course checks

@@ -2,9 +2,8 @@
 
 ## Tanya
 
-Docker build, container training, API checks, browser prediction, and pytest review are complete.
+Docker build, container training, API checks, browser prediction, pytest, commit, and push are complete.
 
-- Commit and push `reports/tanya_docker_review.md`.
 - Open a PR targeting `aarya/module3-implementation`.
 
 ## Aarya

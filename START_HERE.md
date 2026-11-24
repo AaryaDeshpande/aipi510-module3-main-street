@@ -8,6 +8,6 @@ Verified components include R2 ingestion, chronological training, MLflow, Flask 
 
 ## Remaining team steps
 
-1. Tanya commits and pushes `reports/tanya_docker_review.md`, then opens a PR.
+1. Open Tanya's PR targeting `aarya/module3-implementation`.
 2. Aarya reviews the implementation and Tanya's contribution.
 3. Confirm provider interpretation and complete the Canvas submission.

@@ -120,5 +120,5 @@ Keep temporary container artifacts outside the tracked `artifacts/` directory.
 ## Remaining actions
 
 - Confirm provider interpretation.
-- Tanya commits and opens a PR for the completed Docker review.
+- Tanya opens a PR for the completed and pushed Docker review.
 - Aarya completes team review and final Canvas submission.

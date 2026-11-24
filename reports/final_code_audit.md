@@ -19,7 +19,7 @@
 
 ## Remaining administrative checks
 
-- Tanya's Docker execution and report are complete; commit and PR submission remain.
+- Tanya's Docker execution and report are complete; the branch is committed and pushed. PR creation remains.
 - Aarya reviews the implementation and contributed changes.
 - The provider interpretation should be confirmed.
 - The Canvas submission remains pending Aarya's action.

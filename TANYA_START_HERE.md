@@ -49,10 +49,6 @@ The model learns next-year establishment change from industry and current/previo
 
 ## Submission
 
-```bash
-git add reports/tanya_docker_review.md
-git commit -m "Record independent Docker reproduction and model review"
-git push -u origin tanya/docker-reproduction
-```
+The Docker reproduction and review are complete. The branch is committed and pushed as `tanya/docker-reproduction`.
 
 Open a PR from `tanya/docker-reproduction` to `aarya/module3-implementation`. If PR #1 has merged, branch from and target updated `main` instead.

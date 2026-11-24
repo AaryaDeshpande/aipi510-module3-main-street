@@ -9,7 +9,6 @@
 - Public frontend, health, metadata, and prediction checks passed.
 - Tanya Docker evidence: `reports/tanya_docker_review.md`.
 
-## Remaining Git submission steps
+## Remaining step
 
-1. Commit and push `reports/tanya_docker_review.md`.
-2. Open Tanya's PR targeting `aarya/module3-implementation`.
+- Open Tanya's PR targeting `aarya/module3-implementation`.

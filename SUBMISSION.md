@@ -25,7 +25,7 @@ A reproducible Census CBP pipeline predicts next-year establishment counts using
 
 ## Remaining actions
 
-1. Tanya commits and pushes `reports/tanya_docker_review.md`, then opens a PR.
+1. Open Tanya's PR targeting `aarya/module3-implementation`.
 2. Aarya reviews the implementation and Tanya's contribution.
 3. Confirm the provider interpretation.
 4. Merge the reviewed implementation and verify that the repository root is ready.

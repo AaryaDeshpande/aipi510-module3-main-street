@@ -10,14 +10,14 @@ The supplementary ownership worksheet uses dated company examples to explain cus
 
 The economics context is a separately audited IRS 2023 Wisconsin Schedule C snapshot with 32 selected industry groups. Its source workbook is included at `data/economics_source.xlsx`; regenerate with `python scripts/prepare_economics.py` after installing development dependencies. `config.yaml` pins the JSON snapshot hash. Dollar units, suppressed values, owner-labor treatment, filing-address geography, and aggregate-mean limits are explicit. The financial snapshot is not an input to the CBP prediction model. A state-industry margin model was explored separately and is not claimed as a validated opportunity predictor.
 
-**Status:** public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks, Docker CI, and the independent local Docker reproduction are verified. Tanya's Docker review is recorded in `reports/tanya_docker_review.md`; commit and PR submission are pending.
+**Status:** public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks, Docker CI, and the independent local Docker reproduction are verified. Tanya's Docker review is committed and pushed; PR creation remains pending.
 
 ## Submission links
 
 - GitHub repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>
 - Implementation branch: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation>
 - Draft implementation PR: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1>
-- Tanya Docker review: completed; commit and PR submission pending
+- Tanya Docker review: completed and pushed; PR creation pending
 
 The same Flask service serves the frontend and JSON API. Its public root URL provides the frontend, and the browser calls `/predict` on that host.
 
