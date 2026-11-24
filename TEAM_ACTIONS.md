@@ -6,4 +6,4 @@
 4. Aarya and Tanya: review the actual project and be able to explain the target, chronological splits, MLflow, Docker, API, and weaker MAE than persistence.
 5. Personally confirm Canvas group membership, current deadline, and submission confirmation. Aarya supplied existing submission text, but this auditor cannot verify Canvas receipt. No assistant Canvas submission is authorized.
 
-[REQUIREMENTS.md](REQUIREMENTS.md) is the requirement assessment; [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md) is an unexecuted migration guide.
+[REQUIREMENTS.md](REQUIREMENTS.md) is the requirement assessment; [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md) documents the executed migration and reusable deployment commands.

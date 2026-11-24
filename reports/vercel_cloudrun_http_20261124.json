@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-11-24T16:22:06.667380+00:00",
+  "base_url": "https://aipi510-module3-main-street.vercel.app",
+  "passed": true,
+  "checks": [
+    "health",
+    "frontend_served",
+    "real_catalog_and_model_hash",
+    "72_county_geometries",
+    "three_real_json_predictions",
+    "invalid_inputs_rejected"
+  ],
+  "model_sha256": "ef35df21bad9220e68be1133d2a051305201240d604c7ee7d94c3c5ecba71ef6"
+}

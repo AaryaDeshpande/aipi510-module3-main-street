@@ -24,7 +24,7 @@ This audit used the actual fetched repository, GitHub PR/permission and CI APIs/
 
 See the current table in [REQUIREMENTS.md](../REQUIREMENTS.md). Dataset/task/metric, cleaning, configured chronological pipeline, actual MLflow logging, pinned dependencies, Docker entry points/execution, Flask JSON inference, public interactive frontend, sources, limitations, and one submitted PR per partner have evidence.
 
-The named-provider requirements now have actual execution evidence: GCS ingestion and public Cloud Run inference both succeeded. The deployment record captures the successful Cloud Build image digest and Cloud Run revision. The retained Vercel URL uses the Cloud Run API through explicit rewrite rules; post-deployment evidence is recorded separately.
+The named-provider requirements now have actual execution evidence: GCS ingestion and public Cloud Run inference both succeeded. The deployment record captures the successful Cloud Build image digest and Cloud Run revision. The retained Vercel URL was deployed and tested with explicit Cloud Run rewrite rules. Its health/catalog/prediction model hashes match direct Cloud Run, its response carries the Cloud Run trace header, and a fresh browser prediction displayed 281.2 versus 276. Post-deployment evidence is in `vercel_cloudrun_http_20261124.json` and `submission_http_audit_20261124.json`.
 
 ## Useful scope and limitations
 

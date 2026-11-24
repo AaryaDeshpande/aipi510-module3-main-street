@@ -1,3 +1,5 @@
+> Historical pre-migration audit, preserved unchanged below. For the November 24 GCS/Cloud Run deployment and current requirement assessment, read [submission_audit_20261124.md](submission_audit_20261124.md) and [../REQUIREMENTS.md](../REQUIREMENTS.md).
+
 # Module Project 3 requirements audit
 
 ## Verified requirements

@@ -1,0 +1,117 @@
+{
+  "checked_utc": "2026-11-24T16:08:50.867755+00:00",
+  "base_url": "https://aipi510-module3-main-street.vercel.app",
+  "scope": "Fresh public HTTP checks and independent recorded-artifact arithmetic; no fresh training or Docker execution on this Mac.",
+  "passed": true,
+  "checks": [
+    {
+      "check": "public_health",
+      "passed": true
+    },
+    {
+      "check": "public_frontend",
+      "passed": true
+    },
+    {
+      "check": "catalog_72_counties_720_cells",
+      "passed": true
+    },
+    {
+      "check": "catalog_model_matches_loaded_model",
+      "passed": true
+    },
+    {
+      "check": "72_real_county_features",
+      "passed": true
+    },
+    {
+      "check": "prediction_2382",
+      "passed": true
+    },
+    {
+      "check": "prediction_5412",
+      "passed": true
+    },
+    {
+      "check": "prediction_8121",
+      "passed": true
+    },
+    {
+      "check": "empty_json_rejected",
+      "passed": true
+    },
+    {
+      "check": "boolean_count_rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown_industry_rejected",
+      "passed": true
+    },
+    {
+      "check": "non_json_rejected",
+      "passed": true
+    },
+    {
+      "check": "malformed_json_rejected",
+      "passed": true
+    },
+    {
+      "check": "deployed_dataset_matches_repository",
+      "passed": true
+    },
+    {
+      "check": "deployed_model_matches_repository",
+      "passed": true
+    },
+    {
+      "check": "recorded_test_metrics_recomputed",
+      "passed": true
+    },
+    {
+      "check": "split_row_ids_disjoint",
+      "passed": true
+    }
+  ],
+  "health": {
+    "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
+    "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+    "status": "ready"
+  },
+  "predictions": [
+    {
+      "as_of_year": 2023,
+      "baseline": 276.0,
+      "model_beats_baseline": false,
+      "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+      "notice": "Unverified historical 2024 estimate using the 2023 feature definition. Review held-out 2023 error and persistence baseline; this is not a current market-demand forecast.",
+      "prediction": 281.2185201766862,
+      "target_year": 2024
+    },
+    {
+      "as_of_year": 2023,
+      "baseline": 100.0,
+      "model_beats_baseline": false,
+      "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+      "notice": "Unverified historical 2024 estimate using the 2023 feature definition. Review held-out 2023 error and persistence baseline; this is not a current market-demand forecast.",
+      "prediction": 100.07801592758575,
+      "target_year": 2024
+    },
+    {
+      "as_of_year": 2023,
+      "baseline": 100.0,
+      "model_beats_baseline": false,
+      "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+      "notice": "Unverified historical 2024 estimate using the 2023 feature definition. Review held-out 2023 error and persistence baseline; this is not a current market-demand forecast.",
+      "prediction": 102.30725420272185,
+      "target_year": 2024
+    }
+  ],
+  "recomputed_test_mae": 3.0593603978699737,
+  "recomputed_baseline_mae": 2.9015736901620808,
+  "browser_prediction_observed": {
+    "selection": "Dane County / Building equipment contractors",
+    "model_display": 281.2,
+    "baseline_display": 276
+  }
+}

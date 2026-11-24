@@ -26,7 +26,7 @@ The economics context is a separately audited IRS 2023 Wisconsin Schedule C snap
 - Tanya's [local Docker report](reports/tanya_docker_review.md)
 - [Canvas assignment](https://canvas.duke.edu/courses/83524/assignments/363937); last recorded deadline: November 24, 2026, 10:30 am Central / 11:30 am Eastern. Confirm current Canvas state personally.
 
-The same Flask service serves the frontend and JSON API. Its public root URL provides the frontend, and the browser calls `/predict` on that host.
+Vercel serves the submitted frontend URL. The browser calls same-origin `/predict`, and Vercel forwards that request to the public Cloud Run API through explicit rewrites. The Cloud Run service also serves the custom Flask interface directly.
 
 ## What you can do with it
 
@@ -145,7 +145,7 @@ The commands are Linux/macOS examples. Windows users should adapt volume/user sy
 
 **Hosted Docker CI passed:** [run 45284798476](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45284798476) built the image, trained inside it, reproduced metrics/splits/predictions, served the container-trained model, passed real HTTP/curl checks, and uploaded evidence. Local Docker reproduction is recorded in `reports/tanya_docker_review.md`.
 
-The [workflow](.github/workflows/verify.yml) uses Python 3.12 and pinned development dependencies, runs the full tests and Docker checks, and uploads real evidence. The downloaded artifact `14751147208` was verified against SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; provenance is in `reports/ci/artifact_provenance.json`. It uses the frozen local panel and no cloud credentials. The actual R2-ingested run is documented separately.
+The [workflow](.github/workflows/verify.yml) uses Python 3.12 and pinned development dependencies, runs the full tests and Docker checks, and uploads real evidence. The downloaded artifact `14751147208` was verified against SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; provenance is in `reports/ci/artifact_provenance.json`. It uses the frozen local panel and no cloud credentials. The actual GCS-ingested run is documented separately; older R2 evidence is historical.
 
 The public model API runs on **Google Cloud Run** at <https://main-street-business-explorer-afbeftfbia-uc.a.run.app/predict>. Cloud Build used the repository Dockerfile; the build ID, immutable image digest, ready revision, and real HTTP results are recorded in `reports/google_cloud_deployment.json` and `reports/google_cloud_http.json`. The API scales to zero with a maximum of one instance under the existing billing-enabled project. The Vercel frontend remains at <https://aipi510-module3-main-street.vercel.app/> and proxies `/predict`, `/health`, `/metadata`, and `/api/*` to Cloud Run using `vercel.json`. Direct Cloud Run also serves the custom Flask UI. See [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md).
 
