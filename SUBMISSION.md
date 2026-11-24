@@ -25,8 +25,9 @@ A reproducible Census CBP pipeline predicts next-year establishment counts using
 
 ## Remaining actions
 
-1. Open Tanya's PR targeting `aarya/module3-implementation`.
-2. Aarya reviews the implementation and Tanya's contribution.
-3. Confirm the provider interpretation.
-4. Merge the reviewed implementation and verify that the repository root is ready.
-5. Submit the repository and frontend URLs through Canvas; save the observed confirmation.
+1. Review/integrate this audit branch so main includes Tanya's existing PR #2 and current status documents.
+2. Review actual GCS/Cloud Run deployment and HTTP evidence; retain the existing submitted frontend URL.
+3. Review the project personally and confirm the Docker-report version entry.
+4. Confirm Canvas group membership, current deadline and receipt personally. No assistant Canvas submission is authorized.
+
+The signed-in Canvas page directly showed the existing submitted attempt with both URLs. This audit made no Canvas changes. See TEAM_ACTIONS.md.

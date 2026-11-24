@@ -1,14 +1,10 @@
-# Verified project status
+# Project status — November 24, 2026
 
-- Live application: <https://aipi510-module3-main-street.vercel.app/>
-- Implementation branch: `aarya/module3-implementation`
-- 110,488 frozen Census observations; 2019–2023.
-- Chronological Ridge evaluation: test MAE `3.0594`; persistence baseline `2.9016`.
-- 61 automated tests and 12 reproduction checks passed.
-- Docker CI and independent local Docker reproduction passed.
-- Public frontend, health, metadata, and prediction checks passed.
-- Tanya Docker evidence: `reports/tanya_docker_review.md`.
+- Actual GCS upload/checksum verification and cloud-sourced training completed.
+- Four new actual MLflow runs, 12 reproduction checks, and 62 tests passed.
+- Cloud Build built Docker and Cloud Run serves the public API; `reports/google_cloud_deployment.json` records the immutable image/revision.
+- Direct Cloud Run public HTTP checks passed; Vercel frontend keeps the submitted URL and routes API requests to Cloud Run.
+- Aarya PR #1 and Tanya PR #2 exist. This integration includes Tanya's original commits/local report.
+- Canvas submitted attempt and deadline were directly observed; no assistant Canvas changes were made.
 
-## Remaining step
-
-- Open Tanya's PR targeting `aarya/module3-implementation`.
+Remaining personal checks: Canvas group membership if applicable; both partners' understanding/review; Tanya's original Docker-report pandas-version entry. See REQUIREMENTS.md, TEAM_ACTIONS.md, and reports/submission_audit_20261124.md. Earlier dated status reports preserve their historical scope.

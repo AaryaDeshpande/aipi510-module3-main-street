@@ -1,18 +1,9 @@
-# Team actions
+# Remaining team actions
 
-## Tanya
+1. Integrate this reviewed audit branch into `main` after checks pass; it includes Tanya's already submitted contribution. Both members' PRs already exist.
+2. Review the actual GCS/Cloud Run deployment evidence and post-deployment Vercel prediction check; the named-provider migration has now executed.
+3. Tanya: confirm the pandas-version line in `reports/tanya_docker_review.md` using original output. The pinned Docker requirements specify pandas 2.2.3; her report says 2.3.5. Preserve real evidence rather than guessing a replacement.
+4. Aarya and Tanya: review the actual project and be able to explain the target, chronological splits, MLflow, Docker, API, and weaker MAE than persistence.
+5. Personally confirm Canvas group membership, current deadline, and submission confirmation. Aarya supplied existing submission text, but this auditor cannot verify Canvas receipt. No assistant Canvas submission is authorized.
 
-Docker build, container training, API checks, browser prediction, pytest, commit, and push are complete.
-
-- Open a PR targeting `aarya/module3-implementation`.
-
-## Aarya
-
-- Review the implementation and Tanya's contribution.
-- Merge only after required checks pass.
-- Complete the Canvas submission after final repository merge.
-
-## Team
-
-- Confirm provider interpretation.
-- See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) and [REQUIREMENTS.md](REQUIREMENTS.md).
+[REQUIREMENTS.md](REQUIREMENTS.md) is the requirement assessment; [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md) is an unexecuted migration guide.

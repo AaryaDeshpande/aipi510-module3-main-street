@@ -16,46 +16,49 @@
   "candidates": [
     {
       "alpha": 1.0,
-      "run_id": "43f5001b46f2442f815ff96fe8a7457f",
+      "run_id": "eedc114e01c54e7f92ae0f41424624de",
       "validation": {
-        "mae": 3.4101333990532794,
-        "median_ae": 1.3625195749786272,
-        "rmse": 10.315096782488807,
-        "wape": 0.04584655136709776
+        "mae": 3.4101333990527154,
+        "median_ae": 1.362519574980233,
+        "rmse": 10.3150967824817,
+        "wape": 0.04584655136709018
       }
     },
     {
       "alpha": 10.0,
-      "run_id": "51be3601c01e4f928351459c97af225f",
+      "run_id": "c7962715ec4c419787873f7566e60e51",
       "validation": {
-        "mae": 3.4183304601117914,
-        "median_ae": 1.3685446705061572,
-        "rmse": 10.417385781152175,
-        "wape": 0.04595675438173133
+        "mae": 3.4183304601117723,
+        "median_ae": 1.3685446705061022,
+        "rmse": 10.417385781151875,
+        "wape": 0.04595675438173107
       }
     },
     {
       "alpha": 100.0,
-      "run_id": "488622b876aa4f9185729e1bccc82b7d",
+      "run_id": "dbfc51b05ff24d348cf2472612c1c529",
       "validation": {
         "mae": 3.4159943982415824,
         "median_ae": 1.3674081506914453,
-        "rmse": 10.42581880050639,
+        "rmse": 10.425818800506338,
         "wape": 0.04592534787412697
       }
     }
   ],
-  "code_sha256": "152a7ef72931ee76d234d8370935ddb758403151c3b1c43b004f0957816d624d",
-  "created_utc": "2026-11-22T10:35:18.466576+00:00",
+  "code_sha256": "2b0d40909011131c4499b10084971758849c7e991135ccaeaff85777ead7aa90",
+  "created_utc": "2026-11-24T16:14:22.736137+00:00",
   "dataset": {
+    "bucket": "linen-flux-439023-g2-aipi510-m3",
     "cloud_ingestion_verified": true,
-    "object_key": "panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
-    "object_version": "7e5dfd2f3a14003c7290b88534de41da",
+    "crc32c": "xUJHWQ==",
+    "md5_hash": "BjXS5ND7eV0FLst9t+AvDQ==",
+    "object_generation": "1795536856321288",
+    "object_key": "aipi510-module3/panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
     "rows": 110488,
     "sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
-    "source": "https://aarya-main-street-20261122.ad277.chatgpt.site/training-data/panel.csv",
-    "storage_provider": "cloudflare-r2",
-    "transport": "https"
+    "source": "gs://linen-flux-439023-g2-aipi510-m3/aipi510-module3/panel-ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682.csv",
+    "storage_provider": "google-cloud-storage",
+    "transport": "gs"
   },
   "dataset_sha256": "ddef9fbb3835bb981395cc1c77b904d27e899f8f4c75ac97028be31bb5206682",
   "features": [
@@ -63,7 +66,7 @@
     "establishments",
     "previous_establishments"
   ],
-  "final_run_id": "0885f4f0d9824703b82b9844d6d343ac",
+  "final_run_id": "0b079617e67946f180e8b4d132d1d6d4",
   "forecast_year": 2024,
   "limitations": [
     "Historical data ending in 2023; displayed 2024 estimates are unverified historical estimates, not a 2026 nowcast",
@@ -75,7 +78,7 @@
     "Pandemic/recovery-era behavior may not generalize; establishment growth can also mean greater competition"
   ],
   "model_beats_baseline": false,
-  "model_sha256": "40596b7a9eca64dbf80f36e126d002bbeb148e132f2b376a3e5903ccaf7f7cca",
+  "model_sha256": "ef35df21bad9220e68be1133d2a051305201240d604c7ee7d94c3c5ecba71ef6",
   "scope": "National complete county-industry triples in ten selected service industries; Wisconsin explorer",
   "seed": 42,
   "selected_model": "Ridge regression of relative establishment change",
@@ -87,21 +90,21 @@
   },
   "target": "next-year establishment relative change",
   "test": {
-    "mae": 3.0593603978699737,
-    "median_ae": 1.2708668543223833,
-    "rmse": 8.640868334840418,
-    "wape": 0.040711904980523884
+    "mae": 3.05936039786979,
+    "median_ae": 1.2708668543141393,
+    "rmse": 8.640868334833293,
+    "wape": 0.040711904980521435
   },
   "test_rows": 21224,
-  "test_skill_vs_persistence": -0.05437970031327355,
+  "test_skill_vs_persistence": -0.054379700313210044,
   "test_target_year": 2023,
   "train_rows": 21258,
   "train_target_year": 2021,
   "validation": {
-    "mae": 3.4101333990532794,
-    "median_ae": 1.3625195749786272,
-    "rmse": 10.315096782488807,
-    "wape": 0.04584655136709776
+    "mae": 3.4101333990527154,
+    "median_ae": 1.362519574980233,
+    "rmse": 10.3150967824817,
+    "wape": 0.04584655136709018
   },
   "validation_beats_baseline": true,
   "validation_rows": 21132,
@@ -109,7 +112,7 @@
   "versions": {
     "numpy": "2.3.5",
     "pandas": "2.2.3",
-    "python": "3.12.14",
+    "python": "3.12.3",
     "scikit-learn": "1.8.0"
   },
   "wisconsin_baseline_test": {
@@ -119,10 +122,10 @@
     "wape": 0.04659701718525248
   },
   "wisconsin_test": {
-    "mae": 2.217381919592407,
-    "median_ae": 1.3851864052471186,
-    "rmse": 3.7260565929639387,
-    "wape": 0.05178759347371168
+    "mae": 2.2173819195922264,
+    "median_ae": 1.3851864052457312,
+    "rmse": 3.7260565929636265,
+    "wape": 0.051787593473707455
   },
   "wisconsin_test_rows": 617
 }

@@ -5,5 +5,23 @@
       "maxDuration": 60,
       "excludeFiles": "{data/raw/**,data/economics_source.xlsx,artifacts/tracking/**,artifacts/reproduced/**,reports/**,tests/**,container-artifacts/**,.venv/**,**/__pycache__/**,.pytest_cache/**,scripts/**,*.ipynb,*.zip}"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/predict",
+      "destination": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app/predict"
+    },
+    {
+      "source": "/health",
+      "destination": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app/health"
+    },
+    {
+      "source": "/metadata",
+      "destination": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app/metadata"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://main-street-business-explorer-afbeftfbia-uc.a.run.app/api/:path*"
+    }
+  ]
 }

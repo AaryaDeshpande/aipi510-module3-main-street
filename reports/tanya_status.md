@@ -1,14 +1,5 @@
-# Tanya contribution status
+# Tanya contribution status — November 24 audit
 
-## Completed
+Tanya-duke authored [PR #2](https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/2), merged November 24 UTC into `aarya/module3-implementation`. Her authored local Docker and model-review record is `reports/tanya_docker_review.md`. This integration retains her commits.
 
-- Docker Desktop, image build, container training, `/health`, valid `/predict`, and empty-object 422 checks passed.
-- Independent test MAE: `3.0593603978699386`.
-- Independent no-change baseline MAE: `2.9015736901620808`.
-- Container metadata, `/health`, and `/predict` agreed on the independently generated model hash.
-- Evidence: `reports/tanya_docker_review.md`.
-
-## Remaining
-
-- Commit `reports/tanya_docker_review.md`.
-- Push `tanya/docker-reproduction` and open a PR targeting `aarya/module3-implementation`.
+PR creation is complete. The audit does not claim to have witnessed her original local execution. Confirm her reported pandas version against original output; requirements pin 2.2.3 while the report lists 2.3.5. Do not replace the original report with invented output.

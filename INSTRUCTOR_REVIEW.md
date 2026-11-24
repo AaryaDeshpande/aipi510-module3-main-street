@@ -1,14 +1,16 @@
-# ML implementation and evidence map
+# Implementation and evidence map
 
-| Component | Evidence |
+Start with [README.md](README.md) for purpose, data, evaluation, setup, deployment, and limitations. [REQUIREMENTS.md](REQUIREMENTS.md) records the executed correction of both provider gaps.
+
+| Evidence | Location |
 |---|---|
-| Dataset and cleaning | `business_app/prepare.py`, `data/SOURCE.json` |
-| Training and model | `business_app/train.py`, `config.yaml`, `artifacts/metadata.json` |
-| Experiment tracking | `reports/mlflow_runs.json` |
-| Evaluation | MAE `3.0594` versus persistence `2.9016` |
-| Docker | Docker CI and `reports/tanya_docker_review.md` |
-| Serving | Flask `/predict`, `reports/public_http_smoke.json` |
-| Frontend | Live Vercel application |
-| Reproduction | `reports/reproducibility.json`, 61 tests |
+| Official data and cleaning | `data/SOURCE.json`, `business_app/prepare.py` |
+| Configured supervised pipeline | `config.yaml`, `business_app/data.py`, `business_app/train.py` |
+| Actual MLflow run export | `reports/mlflow_runs.json` |
+| Saved model, split IDs, test predictions | `artifacts/` |
+| Main-branch Docker build/train/reproduction/HTTP | [CI run 45292395651](https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45292395651) |
+| Tanya's local execution report | `reports/tanya_docker_review.md`, PR #2 |
+| Fresh public HTTP and artifact checks | `reports/submission_http_audit_20261124.json` |
+| Full current assessment | `reports/submission_audit_20261124.md` |
 
-Open checks: Tanya PR submission, Aarya review, provider interpretation, and final submission.
+The app's historical research view is public at <https://aipi510-module3-main-street.vercel.app/>. The model's test MAE is worse than persistence and this is disclosed. The project does not establish current demand, business profits, or owner wealth.

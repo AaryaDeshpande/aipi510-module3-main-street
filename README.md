@@ -10,14 +10,21 @@ The supplementary ownership worksheet uses dated company examples to explain cus
 
 The economics context is a separately audited IRS 2023 Wisconsin Schedule C snapshot with 32 selected industry groups. Its source workbook is included at `data/economics_source.xlsx`; regenerate with `python scripts/prepare_economics.py` after installing development dependencies. `config.yaml` pins the JSON snapshot hash. Dollar units, suppressed values, owner-labor treatment, filing-address geography, and aggregate-mean limits are explicit. The financial snapshot is not an input to the CBP prediction model. A state-industry margin model was explored separately and is not claimed as a validated opportunity predictor.
 
-**Status:** public frontend/API, R2 ingestion, MLflow runs, 61 tests, 12 reproduction checks, Docker CI, and the independent local Docker reproduction are verified. Tanya's Docker review is committed and pushed; PR creation remains pending.
+**Audit, November 24, 2026:** the cleaned data has been uploaded to **Google Cloud Storage**, the pipeline has actually trained from that GCS object, and the Docker API is publicly deployed on **Google Cloud Run**. All **62 tests**, **12 cloud-source reproduction checks**, four new MLflow runs, and public Cloud Run HTTP checks passed. The submitted Vercel frontend URL is retained; its API routes forward to Cloud Run. Both partner-authored PRs exist, and this integration includes Tanya's original commits. Canvas already showed the submitted repository/frontend links; this audit made no Canvas changes. See [REQUIREMENTS.md](REQUIREMENTS.md) and the [audit](reports/submission_audit_20261124.md).
 
 ## Submission links
 
 - GitHub repository: <https://github.com/AaryaDeshpande/aipi510-module3-main-street>
 - Implementation branch: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/tree/aarya/module3-implementation>
-- Draft implementation PR: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1>
-- Tanya Docker review: completed and pushed; PR creation pending
+- Aarya implementation PR (merged): <https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/1>
+- Tanya contribution PR (merged into implementation branch): <https://github.com/AaryaDeshpande/aipi510-module3-main-street/pull/2>
+- Live frontend: <https://aipi510-module3-main-street.vercel.app/>
+- Canonical Cloud Run API: <https://main-street-business-explorer-afbeftfbia-uc.a.run.app/predict> (JSON POST; example below)
+- Same-origin frontend API proxy: <https://aipi510-module3-main-street.vercel.app/predict>
+- [Actual Google Cloud build/revision evidence](reports/google_cloud_deployment.json)
+- Current-main Docker CI: <https://github.com/AaryaDeshpande/aipi510-module3-main-street/actions/runs/45292395651>
+- Tanya's [local Docker report](reports/tanya_docker_review.md)
+- [Canvas assignment](https://canvas.duke.edu/courses/83524/assignments/363937); last recorded deadline: November 24, 2026, 10:30 am Central / 11:30 am Eastern. Confirm current Canvas state personally.
 
 The same Flask service serves the frontend and JSON API. Its public root URL provides the frontend, and the browser calls `/predict` on that host.
 
@@ -62,7 +69,7 @@ The API's **2024 estimates use 2023 and 2022 counts**. They are unverified histo
 
 Splits separate reference years. Because Census publishes these observations after the reference year, this experiment is not a simulated real-time forecasting backtest. The Wisconsin-only held-out subset has 617 complete histories: model MAE 2.2174 and persistence MAE 1.9951. Those local errors are also visible in the interface.
 
-Executed checks include 61 tests, 12 cloud-source reproduction checks, four MLflow runs, Docker build/train/serve checks, public HTTP checks, and browser prediction checks. Evidence is in `reports/pytest.txt`, `reports/reproducibility.json`, `reports/mlflow_runs.json`, `reports/tanya_docker_review.md`, `reports/public_http_smoke.json`, and `reports/public_browser_checks.json`.
+The November 24 audit independently confirmed 17 public-HTTP and recorded-artifact checks, including three real predictions, invalid-input handling, deployed model/data hashes, and recomputed MAE. A browser prediction displayed 281.2 versus a no-change baseline of 276 for Dane County/building-equipment contractors. Evidence: `reports/submission_http_audit_20261124.json`. The auditor reran 62 Python tests and cloud-source training on this Mac, and built Docker through Cloud Build; Docker itself was not run locally on this Mac. Tanya's PR records local Docker execution; her report lists pandas 2.3.5, while the Docker requirements pin 2.2.3. Tanya should confirm that entry from her original output. Her original evidence has been preserved unchanged. Earlier dated reports remain historical evidence, not a current status checklist.
 
 ## Run locally
 
@@ -103,9 +110,9 @@ Routine training uses the included 5.8 MB `data/panel.csv` snapshot. `python -m 
 
 ## Cloud ingestion and experiment tracking
 
-The cleaned panel is stored in **Cloudflare R2**, with actual storage/download and body/header checks in `reports/cloud_storage.json`. **Cloud-ingested training succeeded**: `artifacts/ingestion.json` records the authenticated HTTPS endpoint, provider, content-addressed object key, version `7e5dfd2f3a14003c7290b88534de41da`, 110,488 rows, the pinned hash, and `cloud_ingestion_verified: true`. `reports/cloud_training.log` contains the successful run.
+The cleaned panel is stored in **Google Cloud Storage** in private bucket `linen-flux-439023-g2-aipi510-m3`. Actual upload/download SHA-256 verification is in `reports/cloud_upload.json`. **GCS-sourced training succeeded**: `artifacts/ingestion.json` records the `gs://` URI, bucket, object generation, checksums, 110,488 rows, and verified source. `config.yaml` now defaults to that GCS object. The loader pins the object generation during download and checks its SHA-256.
 
-Cloud retraining requires `SITES_DATA_BEARER` to be set privately in the terminal environment. The token is read only for the exact approved endpoint, redirects are refused, and it is excluded from recorded evidence. Do not paste it into chat, source, or logs. The bundled local snapshot is the credential-free reproduction and CI route. See [DEPLOYMENT.md](DEPLOYMENT.md) for both commands and the final reproduction/export checks. Ordinary HTTPS alone is not claimed as verified cloud storage; the approved endpoint additionally identifies the R2 object and its version.
+Run `gcloud auth application-default login` through Google's normal browser flow for authorized cloud retraining, then `python -m business_app train`. For credential-free reproduction, explicitly use `--data-uri data/panel.csv`. The packaged inference service needs no training-data credential. See [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md) and the deployment script. Earlier R2 reports preserve the previous provider's historical execution; R2 is no longer the canonical training source.
 
 Real MLflow runs record the three validation candidates and the final selected-model evaluation, including data/code hashes, split periods/counts, alpha, metrics, and saved model/evaluation artifacts. Inspect a locally regenerated tracking store:
 
@@ -140,12 +147,16 @@ The commands are Linux/macOS examples. Windows users should adapt volume/user sy
 
 The [workflow](.github/workflows/verify.yml) uses Python 3.12 and pinned development dependencies, runs the full tests and Docker checks, and uploads real evidence. The downloaded artifact `14751147208` was verified against SHA-256 `4a86198b544bb540f7e7bd787ce21ff39260e2ee2f43b25c7efdc8006012624a`; provenance is in `reports/ci/artifact_provenance.json`. It uses the frozen local panel and no cloud credentials. The actual R2-ingested run is documented separately.
 
-The training-data service is Cloudflare R2 behind the authenticated review endpoint. The Flask frontend/API is deployed on Vercel at <https://aipi510-module3-main-street.vercel.app/>, from source commit `f4e78dbdb72bf78c4f49586b89a317eb72b5d0f6`. Signed-out requests to the stable production domain pass; the unique build URL still requires Vercel authentication. No access-control setting was changed during verification. The packaged inference service needs no training-data token. See [DEPLOYMENT.md](DEPLOYMENT.md).
+The public model API runs on **Google Cloud Run** at <https://main-street-business-explorer-afbeftfbia-uc.a.run.app/predict>. Cloud Build used the repository Dockerfile; the build ID, immutable image digest, ready revision, and real HTTP results are recorded in `reports/google_cloud_deployment.json` and `reports/google_cloud_http.json`. The API scales to zero with a maximum of one instance under the existing billing-enabled project. The Vercel frontend remains at <https://aipi510-module3-main-street.vercel.app/> and proxies `/predict`, `/health`, `/metadata`, and `/api/*` to Cloud Run using `vercel.json`. Direct Cloud Run also serves the custom Flask UI. See [infrastructure/GOOGLE_CLOUD.md](infrastructure/GOOGLE_CLOUD.md).
 
 ## Files and authorship
 
 `business_app/prepare.py` freezes official data; `data.py` validates ingestion and joins consecutive years; `train.py` handles preprocessing, chronological selection/evaluation, and tracking; `web.py` implements the public contracts. `templates/` and `static/` implement the visual explorer; `tests/`, verification scripts, and `reports/` capture checks as they are executed. The requirement audit, deployment guide, and team checklist document open work.
 
-This original business application was prepared with AI assistance. It reuses engineering patterns/helpers from the separate local Iris review implementation prepared in this conversation: data hashing, a CLI, MLflow tracking, saved-artifact serving, and Docker structure. The business cleaning, regression target, chronological evaluation, geography, and visual research workflow are project-specific additions. No Iris accuracy or test result is evidence for this model.
+This original business application was prepared with AI assistance. It reuses engineering patterns/helpers from the separate local Iris review implementation prepared in earlier work: data hashing, a CLI, MLflow tracking, saved-artifact serving, and Docker structure. The business cleaning, regression target, chronological evaluation, geography, and visual research workflow are project-specific additions. No Iris accuracy or test result is evidence for this model.
+
+Earlier learning source: [Aarya's Week 12 Iris pipeline](https://github.com/AaryaDeshpande/aipi510-week12-ml-pipeline), notebook blob SHA `cce4e60e1ecf3a3bc01b94cc2c5d7f94ad5888f6`. Its use of scikit-learn pipelines and separate evaluation motivated the workflow; the present model is a different regression experiment. Cite any further external snippets/templates and record real authorship. The syllabus recommends AI citation and requires citation of reused external code.
+
+Earlier research source: [Aarya's Module 1 national local-service market screen](https://github.com/AaryaDeshpande/aipi510-module1-local-service-market-screen). That project provides prior market-screening research and context. The Module 3 regression target, chronological splits, model training, experiment tracking, and serving pipeline are distinct work; Module 1 results are not evidence for this model.
 
 **Team:** Aarya Deshpande and Tanya Sharma (`Tanya-duke`). Status and instructions are in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) and [TANYA_START_HERE.md](TANYA_START_HERE.md).
